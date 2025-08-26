@@ -1,97 +1,107 @@
-# Diamond Model Overview 💎
+Diamond Model of Intrusion Analysis 💎
+https://img.shields.io/badge/Cybersecurity-Analysis-blue?style=for-the-badge
+https://img.shields.io/badge/Threat_Intelligence-Diamond_Model-red?style=for-the-badge
+https://img.shields.io/badge/Status-Completed-success?style=for-the-badge
+https://img.shields.io/badge/License-MIT-blue?style=for-the-badge
 
-![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Analysis-blue?style=for-the-badge)
-![Threat Intelligence](https://img.shields.io/badge/Threat_Intelligence-Diamond_Model-red?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+Overview
+The Diamond Model is a foundational framework for intrusion analysis, threat hunting, and incident response. Developed in 2013 by Sergio Caltagirone, Andrew Pendergast, and Christopher Betz, it provides a structured methodology for mapping cyberattack activity. The model's core strength lies in its ability to clearly articulate complex attack scenarios to both technical and non-technical audiences.
 
-The **Diamond Model** is a framework for intrusion analysis, threat hunting, and incident response. It helps map cyberattack activity in a structured, clear manner for both technical and non-technical audiences.
+Core Concept
+The model arranges four core elements in a diamond shape to visually represent the relationships and interactions in a cyber intrusion:
 
----
-
-## Overview
-
-* Developed in **2013** by **Sergio Caltagirone, Andrew Pendergast, and Christopher Betz**
-* Core features: **Adversary**, **Infrastructure**, **Capability**, **Victim**
-* Arranged in a **diamond shape** to show relationships between elements
-* Supports **intrusion analysis, threat hunting, incident response, and network defense**
-* Explains cyberattacks to both technical and non-technical audiences
-
----
-
-## Diamond Model Visual Diagram
-
+text
       [Adversary]
            ▲
            │
   ┌────────┴────────┐
   │                 │
 [Infrastructure] [Capability]
-│ │
-└────────┬────────┘
-│
-[Victim]
+  │                 │
+  └────────┬────────┘
+           │
+        [Victim]
+Arrows indicate relationships and interactions between core components.
 
-*Arrows indicate relationships and interactions between core components.*
+Core Elements
+Element	Description
+Adversary	The attacker or threat actor carrying out the attack
+Infrastructure	Resources and systems used by the adversary (servers, malware hosts, C2 infrastructure)
+Capability	Tools, malware, exploits, and techniques used by the adversary
+Victim	Target of the attack, including people, systems, or organizational assets
+Expanded Framework Components
+Meta-Features
+Feature	Description
+Timestamp	When the event occurred
+Phase	Stage of the attack lifecycle
+Result	Outcome of the event (success/failure)
+Direction	Flow of the attack (victim-to-infrastructure, etc.)
+Methodology	TTPs (Tactics, Techniques, Procedures) used
+Resources	Assets required to execute the capability
+Social-Political Component
+Aspect	Description
+Adversary Operator	The hacker(s) performing the attack
+Adversary Customer	Entity benefiting from the attack (may differ from operator)
+Motivation	Driver behind the attack (financial, political, ideological)
+Victim Analysis
+Component	Description
+Victim Personae	Profiles and characteristics of victims
+Victim Assets	Specific assets targeted by the adversary
+Technology Component
+Aspect	Description
+Infrastructure Type 1	Owned/controlled directly by adversary
+Infrastructure Type 2	Controlled by intermediaries (compromised systems, malicious domains)
+Capability Implementation	How tools and techniques are deployed
+Key Objectives
+By applying the Diamond Model, security professionals can:
 
----
+Systematically analyze cyber intrusions, breaches, and incidents
 
-## Core Elements Table
+Understand Advanced Persistent Threats (APTs) and their operation
 
-| Element           | Description                                                                 |
-|-----------------|-----------------------------------------------------------------------------|
-| **Adversary**     | The attacker or threat actor carrying out the attack.                        |
-| **Infrastructure**| Resources and systems used by the adversary (servers, malware hosts).       |
-| **Capability**    | Tools, malware, exploits, and techniques used by the adversary.             |
-| **Victim**        | Target of the attack, including people, systems, or assets.                 |
+Differentiate roles between Adversary Operators and Adversary Customers
 
----
+Identify targeting patterns through Victim Personae and Asset analysis
 
-## Meta-Features & Components Table
+Catalog adversary capabilities and tools (Adversary Arsenal)
 
-| Feature/Component          | Description                                                                 |
-|-----------------------------|-----------------------------------------------------------------------------|
-| **Event Meta-Features**     | Timestamp, Phase, Result, Direction, Methodology, Resources                |
-| **Social-Political**        | Motivation of the adversary (financial, political, ideological)            |
-| **Technology Component**    | How capability and infrastructure interact                                  |
-| **Adversary Operator**      | Hacker performing the attack                                                |
-| **Adversary Customer**      | Entity benefiting from the attack                                           |
-| **Victim Personae**         | Profiles of victims                                                        |
-| **Victim Assets**           | Assets targeted by the adversary                                           |
+Classify infrastructure types and their purposes
 
----
+Apply meta-features for comprehensive event analysis
 
-## Objectives
+Contextualize attacks through social-political and technological lenses
 
-By using the Diamond Model, you will be able to:
+Generate actionable intelligence for defensive improvements
 
-* Identify elements of a cyber intrusion (breach, attack, or incident)
-* Analyze **Advanced Persistent Threats (APT)**
-* Understand and communicate the roles of **Adversary Operator** and **Adversary Customer**
-* Recognize **Victim Personae** and **Victim Assets**
-* Determine an adversary’s **Capabilities** and **Adversary Arsenal**
-* Understand **Infrastructure types**:
-  * **Type 1:** Owned/controlled by adversary
-  * **Type 2:** Controlled by intermediaries (e.g., malicious domains)
-* Apply **Event Meta-Features**
-* Analyze **Social-Political Component**
-* Analyze **Technology Component**
-* Build a **Diamond Model** for a given case study and extract actionable intelligence
+Practical Application
+The Diamond Model enables security teams to:
 
----
+Predict adversary behavior based on established patterns
 
-## Summary
+Improve defensive strategies by understanding attack methodologies
 
-The **Diamond Model** provides a structured, scientific approach to intrusion analysis. By identifying the **adversary, victim, capability, and infrastructure**—and adding meta-features, social-political, and technology context—you can:
+Communicate effectively about incidents across technical and leadership teams
 
-* Predict adversary behavior  
-* Improve defensive strategies  
-* Communicate incidents clearly to both technical and non-technical stakeholders  
+Correlate events across multiple incidents to identify campaign activity
 
----
+Support threat hunting by providing a structured analysis framework
 
-## References
+Complementary Frameworks
+The Diamond Model works effectively alongside other security frameworks:
 
-* Caltagirone, S., Pendergast, A., & Betz, C. (2013). *The Diamond Model of Intrusion Analysis.*
-* [MITRE ATT&CK](https://attack.mitre.org/) – Complementary framework
+MITRE ATT&CK - For understanding adversary TTPs
+
+Cyber Kill Chain - For analyzing attack progression
+
+VERIS - For incident classification and reporting
+
+References
+Caltagirone, S., Pendergast, A., & Betz, C. (2013). The Diamond Model of Intrusion Analysis
+
+MITRE ATT&CK Framework - Complementary framework for adversary TTPs
+
+Summary
+The Diamond Model provides a scientific, structured approach to intrusion analysis that moves beyond simple indicator tracking. By examining the relationships between adversary, capability, infrastructure, and victim—enhanced with meta-features and contextual components—security teams can develop deeper insights into cyber threats and build more effective defense strategies.
+
+
 
