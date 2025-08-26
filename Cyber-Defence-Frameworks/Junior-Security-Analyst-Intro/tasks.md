@@ -50,5 +50,22 @@ Serve as the focal point for coordinated efforts to monitor, analyse, and protec
 
 **[Question 2.1] Read the above**  
 **Answer:** No answer needed
+task 3
+<img width="672" height="51" alt="Screenshot 2025-08-26 at 4 03 49 PM" src="https://github.com/user-attachments/assets/cf9ff862-fbf9-4ac4-80c4-cb6c41057efe" />
+It is not always straightforward and may be quite challenging because you are working with a variety of log sources from numerous tools, but when you finish working on an incident and have effectively remedied the threat, it is one of the most pleasant and fulfilling experiences.
+
+[Question 3.1] Click on the green View Site button in this task to open the Static Site Lab and navigate to the security monitoring tool on the right panel to try to identify the suspicious activity.
+
+Answer: No answer needed.
+
+[Question 3.2] What was the malicious IP address in the alerts?
+
+<img width="676" height="624" alt="Screenshot 2025-08-26 at 4 04 51 PM" src="https://github.com/user-attachments/assets/e848c16b-8581-467a-8360-74f8ebe7eec8" />
+<img width="661" height="370" alt="Screenshot 2025-08-26 at 4 05 00 PM" src="https://github.com/user-attachments/assets/2f417a60-b602-4adb-8550-325d802c1f2c" />
+<img width="669" height="177" alt="Screenshot 2025-08-26 at 4 05 18 PM" src="https://github.com/user-attachments/assets/4fe6b160-782f-430a-a306-959f88c1c7cd" />
+
+Answer: 221.181.185.159
+
+
 
 
