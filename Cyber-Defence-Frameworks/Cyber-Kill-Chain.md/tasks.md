@@ -1,213 +1,220 @@
-TryHackMe: Cyber Kill Chain Room
+# 🛡️ TryHackMe: Cyber Kill Chain Room
 
-The Cyber Kill Chain framework is designed for identification and prevention of network intrusions. In this room, you will learn the steps adversaries take to achieve their goals and how to detect and prevent attacks.
+The **Cyber Kill Chain framework** is designed to identify and prevent network intrusions. Learn the steps adversaries take and how to detect & prevent attacks.
 
-Task 1: Introduction
+---
 
-The term kill chain originates from the military and describes the structure of an attack:
+## 🔹 Task 1: Introduction
 
-Target identification
+![Cyber Kill Chain Intro](https://github.com/user-attachments/assets/cdbe29b7-abd4-4274-a25f-bf4535211350)
 
-Decision and order to attack the target
+The term **kill chain** originates from the military and describes the structure of an attack:
 
-Target destruction
+1. Target identification
+2. Decision and order to attack the target
+3. Target destruction
 
-Lockheed Martin adapted this concept for cybersecurity in 2011, defining steps used by malicious actors in cyberspace. To succeed, an adversary must pass through all phases of the Kill Chain.
+**Lockheed Martin (2011)** adapted this for cybersecurity.
 
-Importance
+**Purpose:** Helps **SOC Analysts, Threat Hunters, Incident Responders** detect intrusion attempts and understand attacker objectives.
 
-Understanding the Cyber Kill Chain helps defend against:
+**Phases of the Kill Chain:**
 
-Ransomware attacks
+| Phase                | Description                                           |
+| -------------------- | ----------------------------------------------------- |
+| Reconnaissance       | Information gathering on target                      |
+| Weaponization        | Create payload using malware + exploit               |
+| Delivery             | Transmit payload to target                            |
+| Exploitation         | Exploit vulnerability                                |
+| Installation         | Establish persistence                                |
+| Command & Control    | Remote control via C2 channels                        |
+| Actions on Objectives| Achieve goals (exfiltrate data, sabotage, etc.)      |
 
-Security breaches
+---
 
-Advanced Persistent Threats (APTs)
+## 🔹 Task 2: Reconnaissance
 
-It allows SOC Analysts, Threat Hunters, and Incident Responders to recognize intrusion attempts and understand attacker objectives.
+![Reconnaissance](https://github.com/user-attachments/assets/69d20151-2026-4b0a-905b-4a9e4fe8a626)
 
-Attack Phases
+**Definition:** Gathering information on a target (planning phase).
 
-Reconnaissance
+**Tools & Techniques:**
 
-Weaponization
+| Tool/Method          | Purpose                                               |
+| -------------------- | ----------------------------------------------------- |
+| theHarvester          | Emails, names, subdomains, IPs, URLs                 |
+| Hunter.io             | Email hunting                                        |
+| OSINT Framework       | Web interface to OSINT tools                          |
+| Social media          | LinkedIn, Facebook, Twitter, Instagram for OSINT     |
 
-Delivery
+<details>
+<summary>💡 Answers / Notes</summary>
 
-Exploitation
+* **Web-based OSINT interface:** `OSINT Framework`  
+* **Email gathering process:** `Email harvesting`
 
-Installation
+</details>
 
-Command & Control
+---
 
-Actions on Objectives
+## 🔹 Task 3: Weaponization
 
-Learning Objectives: Learn the phases of the Cyber Kill Chain, and understand the pros and cons of the traditional model.
+![Weaponization](https://github.com/user-attachments/assets/c22c9516-5bec-4258-a910-3d8964a1c8ef)
 
-Outcome: Recognize attack phases and break the kill chain.
+**Definition:** Combine malware + exploit into a payload.
 
-Task 2: Reconnaissance
+**Examples:**
 
-Definition: Reconnaissance is the process of discovering and collecting information on a target system or victim. It is the planning phase of an attack.
+- Malicious Office macros/VBA scripts  
+- Malicious USB drives  
+- Command & Control channels  
+- Backdoor implants
 
-OSINT (Open-Source Intelligence) is part of reconnaissance.
+<details>
+<summary>💡 Answers / Notes</summary>
 
-Attackers gather information such as email addresses, phone numbers, and company size.
+* **Group of commands in Office documents for malicious purposes:** `Macro`
 
-Tools used for reconnaissance:
+</details>
 
-theHarvester – gathers emails, names, subdomains, IPs, URLs
+---
 
-Hunter.io – email hunting tool
+## 🔹 Task 4: Delivery
 
-OSINT Framework – web-based interface to OSINT tools
+![Delivery](https://github.com/user-attachments/assets/e9bc7e1e-30b4-4a25-93c5-354f1cada295)
 
-Social media (LinkedIn, Facebook, Twitter, Instagram) can provide valuable information for phishing attacks.
+**Definition:** Transmitting the payload to the victim.
 
-Scenario: A malicious attacker, “Megatron,” begins his attack planning with OSINT to study the target.
+| Method               | Description                                          |
+| -------------------- | ---------------------------------------------------- |
+| Phishing Emails       | Spearphishing for targeted victims                  |
+| USB Drop Attacks      | Malicious USB left for victim to pick up            |
+| Watering Hole Attack  | Compromise popular sites; victims download malware  |
 
-Questions:
+<details>
+<summary>💡 Answer</summary>
 
-Web-based OSINT interface: OSINT Framework
+* **Attack via compromised websites targeting specific group:** `Watering hole attack`
 
-Email gathering process: Email harvesting
+</details>
 
-Task 3: Weaponization
+---
 
-Definition: Weaponization combines malware and exploit into a deliverable payload.
+## 🔹 Task 5: Exploitation
 
-Malware: Software designed to damage, disrupt, or gain unauthorized access
+**Definition:** Attacker takes advantage of a vulnerability.
 
-Exploit: Code that leverages a vulnerability
+- Triggered by phishing links/attachments  
+- Zero-day exploits (unknown vulnerabilities)  
+- Lateral movement post-initial access
 
-Payload: Malicious code executed on the target system
+<details>
+<summary>💡 Answer</summary>
 
-Example Techniques:
+* **Cyberattack exploiting an unknown vulnerability:** `Zero-day exploit`
 
-Infected Microsoft Office documents with malicious macros/VBA scripts
+</details>
 
-Malicious USB drives or worms
+---
 
-Command and Control (C2) channels
+## 🔹 Task 6: Installation
 
-Backdoor implants
+![Installation](https://github.com/user-attachments/assets/c86f70fd-0429-430a-a270-165f560f4587)
 
-Question:
+**Definition:** Establish persistence on victim system.
 
-Group of commands in Office documents for malicious purposes: Macro
+| Technique             | Description                                           |
+| --------------------- | ----------------------------------------------------- |
+| Web Shell             | `.php`/`.asp`/`.jsp` scripts for remote access      |
+| Meterpreter           | Backdoor implant for post-exploitation              |
+| Registry Run Keys     | Auto-start malware via Windows Registry             |
+| Timestomping          | Modify file timestamps to evade detection           |
 
-Task 4: Delivery
+<details>
+<summary>💡 Answers</summary>
 
-Definition: The attacker transmits the payload to the victim.
+1. **Modify file timestamps:** `Timestomping`  
+2. **Malicious script on webserver:** `Web shell`
 
-Methods:
+</details>
 
-Phishing emails (spearphishing for specific targets)
+---
 
-USB Drop Attacks
+## 🔹 Task 7: Command & Control (C2)
 
-Watering hole attacks: compromise websites frequented by the target group; victims download malware unintentionally
+![Command & Control](https://github.com/user-attachments/assets/2d02c9a5-c5f4-4784-8822-04cb8c8d4421)
 
-Question:
+**Definition:** Remote control of victim system via C2 channels.
 
-Attack targeting specific group via compromised websites: Watering hole attack
+| Technique             | Description                                           |
+| --------------------- | ----------------------------------------------------- |
+| HTTP/HTTPS Beaconing   | Regular signals to C2 server                         |
+| DNS Tunneling          | Using DNS queries to communicate with C2 server      |
 
-Task 5: Exploitation
+<details>
+<summary>💡 Answer</summary>
 
-Definition: Exploitation occurs when the attacker takes advantage of a vulnerability.
+* **C2 communication via DNS:** `DNS Tunneling`
 
-Triggered by phishing links or attachments
+</details>
 
-Zero-day exploits: vulnerabilities unknown to vendors, leaving no opportunity for detection
+---
 
-Lateral movement: spreading through the network after initial access
+## 🔹 Task 8: Actions on Objectives (Exfiltration)
 
-Question:
+**Definition:** Attacker achieves final goals.
 
-Cyberattack exploiting an unknown vulnerability: Zero-day exploit
+| Action                  | Description                                        |
+| ----------------------- | -------------------------------------------------- |
+| Credential Harvesting    | Collect user credentials                            |
+| Privilege Escalation     | Gain higher system permissions                      |
+| Lateral Movement         | Move through network                                |
+| Data Exfiltration         | Steal sensitive data                                 |
+| Shadow Copy Deletion      | Delete backups or snapshots                          |
 
-Task 6: Installation
+<details>
+<summary>💡 Answer</summary>
 
-Definition: The attacker installs persistent backdoors to maintain access.
+* **Windows technology for snapshots/backups:** `Shadow Copy`
 
-Techniques:
+</details>
 
-Web shells (.php, .asp, .jsp)
+---
 
-Backdoors (e.g., Meterpreter)
+## 🔹 Task 9: Practice Analysis – Target Breach 2013
 
-Modifying Windows services (MITRE ATT&CK T1543.003)
+**Scenario:** Target breach (Nov 27, 2013) affected ~40 million accounts.
 
-Registry Run Keys / Startup Folder
+| Kill Chain Phase  | Event                             |
+| ----------------- | --------------------------------- |
+| Weaponization     | powershell                        |
+| Delivery          | spearphishing attachment          |
+| Exploitation      | exploit public-facing application |
+| Installation      | dynamic linker hijacking          |
+| Command & Control | fallback channels                 |
+| Exfiltration      | data from local system            |
 
-Timestomping – modifies file timestamps to evade detection
+<details>
+<summary>💡 Flag / Notes</summary>
 
-Questions:
+Provided by the static site upon completion.
 
-Technique to modify file timestamps: Timestomping
+</details>
 
-Malicious script on webserver: Web shell
+---
 
-Task 7: Command & Control
+## 🔹 Task 10: Conclusion
 
-Definition: After persistence, the attacker remotely controls the victim’s system via C2 channels.
+![Conclusion](https://github.com/user-attachments/assets/d45c1025-509c-4167-8318-33cf16579ecc)
 
-Examples:
+**Key Takeaways:**
 
-HTTP/HTTPS beaconing
+- Cyber Kill Chain is useful for network defense.  
+- Limitations: Last updated 2011, malware & perimeter focus, weak against insider threats.  
+- Modern attacks combine multiple TTPs.  
+- Recommendation: Combine with **MITRE ATT&CK** or **Unified Kill Chain** for full coverage.
 
-DNS tunneling – victim makes DNS requests to attacker-controlled server
+---
 
-Question:
+> ⚡ This `README.md` is optimized for **GitHub**: clear tables, collapsible answers, and visual structure for easy reference.
 
-C2 communication via DNS: DNS Tunneling
-
-Task 8: Actions on Objectives (Exfiltration)
-
-Definition: The attacker achieves their goals.
-
-Possible actions:
-
-Collect credentials
-
-Privilege escalation
-
-Internal reconnaissance
-
-Lateral movement
-
-Exfiltrate sensitive data
-
-Delete backups/shadow copies
-
-Overwrite or corrupt data
-
-Question:
-
-Windows technology for snapshots/backups: Shadow Copy
-
-Task 9: Practice Analysis (Target Data Breach 2013)
-
-Scenario: Target data breach on Nov 27, 2013, affected ~40 million credit/debit accounts.
-
-Static Site Lab Answers:
-
-Kill Chain Phase	Event
-Weaponization	powershell
-Delivery	spearphishing attachment
-Exploitation	exploit public-facing application
-Installation	dynamic linker hijacking
-Command & Control	fallback channels
-Exfiltration	data from local system
-
-Flag: Provided by the static site upon completion.
-
-Task 10: Conclusion
-
-The Cyber Kill Chain is a valuable tool for improving network defense.
-
-Limitations: Last updated in 2011, focuses on malware and perimeter defense, cannot detect insider threats effectively.
-
-Modern threats combine multiple tactics, techniques, and procedures (TTPs).
-
-Recommendation: Use MITRE ATT&CK and Unified Kill Chain alongside the traditional framework for a comprehensive defense strategy.
