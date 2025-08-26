@@ -1,21 +1,16 @@
-# Diamond Model Overview 💎
 
-![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Analysis-blue?style=for-the-badge)
-![Threat Intelligence](https://img.shields.io/badge/Threat_Intelligence-Diamond_Model-red?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-
-The **Diamond Model** is a framework for intrusion analysis, threat hunting, and incident response. It helps map cyberattack activity in a structured, clear manner for both technical and non-technical audiences.
+*Arrows indicate relationships and interactions between core components.*
 
 ---
 
-## Overview
+## Core Elements Table
 
-* Developed in **2013** by **Sergio Caltagirone, Andrew Pendergast, and Christopher Betz**
-* Core features: **Adversary**, **Infrastructure**, **Capability**, **Victim**
-* Arranged in a **diamond shape** to show relationships between elements
-* Supports **intrusion analysis, threat hunting, incident response, and network defense**
-* Explains cyberattacks to both technical and non-technical audiences
+| Element         | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| **Adversary**   | The attacker or threat actor carrying out the attack.                        |
+| **Infrastructure** | Resources and systems used by the adversary (servers, malware hosts).     |
+| **Capability**  | Tools, malware, exploits, and techniques used by the adversary.             |
+| **Victim**      | Target of the attack, including people, systems, or assets.                 |
 
 ---
 
@@ -54,3 +49,4 @@ The **Diamond Model** provides a structured, scientific approach to intrusion an
 
 * Caltagirone, S., Pendergast, A., & Betz, C. (2013). *The Diamond Model of Intrusion Analysis.*
 * [MITRE ATT&CK](https://attack.mitre.org/) – Complementary framework
+
