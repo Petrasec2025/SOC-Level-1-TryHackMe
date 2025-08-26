@@ -6,14 +6,16 @@
 ![CompTIA Security+](https://img.shields.io/badge/Security%2B-0078D6?style=for-the-badge&logo=comptia&logoColor=white)
 ![CySA+](https://img.shields.io/badge/CySA%2B-800080?style=for-the-badge&logo=comptia&logoColor=white)
 ![SSCP](https://img.shields.io/badge/SSCP-0000FF?style=for-the-badge&logo=isc2&logoColor=white)
-![SC2](https://img.shields.io/badge/SC2-DAA520?style=for-the-badge&logo=starcraft&logoColor=white)
-![Fortinet](https://img.shields.io/badge/Fortinet-FF0000?style=for-the-badge&logo=fortinet&logoColor=white)
-![IBM](https://img.shields.io/badge/IBM-0530ad?style=for-the-badge&logo=ibm&logoColor=white)
-![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![AI](https://img.shields.io/badge/AI-FF9900?style=for-the-badge&logo=artificial-intelligence&logoColor=white)
 ![Red Team](https://img.shields.io/badge/Red%20Team-E81123?style=for-the-badge&logo=redhat&logoColor=white)
 ![Blue Team](https://img.shields.io/badge/Blue%20Team-0078D7?style=for-the-badge&logo=blueprism&logoColor=white)
 ![Purple Team](https://img.shields.io/badge/Purple%20Team-800080?style=for-the-badge&logo=purple&logoColor=white)
+![SANS](https://img.shields.io/badge/SANS-000000?style=for-the-badge&logo=sans&logoColor=white)
+![NIST](https://img.shields.io/badge/NIST-005BAC?style=for-the-badge&logo=nist&logoColor=white)
+![UAE Cybersecurity Framework](https://img.shields.io/badge/UAE%20Cybersecurity-FF5733?style=for-the-badge)
+![Institute of Cybersecurity Council](https://img.shields.io/badge/ICSC-4B0082?style=for-the-badge)
+![US Security Department](https://img.shields.io/badge/US%20Security%20Dept-1E90FF?style=for-the-badge)
+![OSINT](https://img.shields.io/badge/OSINT-FF69B4?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-FF9900?style=for-the-badge&logo=artificial-intelligence&logoColor=white)
 
 ---
 
@@ -56,3 +58,6 @@ The room includes a **practical exercise** where users match attacker actions to
 - [TryHackMe Profile: Petras20](https://tryhackme.com/p/Petras20)  
 - [MITRE ATT&CK Framework](https://attack.mitre.org/)  
 - [Lockheed Martin Cyber Kill Chain](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
+- [SANS Institute](https://www.sans.org/)  
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+
