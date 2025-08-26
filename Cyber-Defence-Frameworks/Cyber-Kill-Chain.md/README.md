@@ -2,6 +2,7 @@
 
 ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Ethical_Hacking-blue?style=for-the-badge&logo=hackaday)
 ![TryHackMe](https://img.shields.io/badge/TryHackMe-Walkthrough-red?style=for-the-badge&logo=tryhackme)
+![SOC Analyst](https://img.shields.io/badge/Role-SOC_Analyst-blue?style=for-the-badge&logo=securityscorecard)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
