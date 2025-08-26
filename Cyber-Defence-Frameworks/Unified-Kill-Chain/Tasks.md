@@ -187,3 +187,20 @@ Since the answer can be found above, I won’t be posting it. You can follow alo
 
 Scroll up to the Section with MITRE Tactic TA0002, in the first sentence you will find the answer, the highlighted part describes what the question is asking. Once you find it, highlight & copy (ctrl +c ) or type the answer into the TryHackMe answer field, then click submit.
 <img width="761" height="147" alt="Screenshot 2025-08-26 at 8 54 56 PM" src="https://github.com/user-attachments/assets/0e48baf7-78c3-44fa-bdfb-7d678e467095" />
+Moving from one system to another is an example of?
+Since the answer can be found above, I won’t be posting it. You can follow along to learn and discover where they are located.
+
+Scroll up to the Section with MITRE Tactic TA0008, in the first sentence you will find the answer, the highlighted part describes what the question is asking. Once you find it, highlight & copy (ctrl +c ) or type the answer into the TryHackMe answer field, then click submit.
+
+Press enter or click to view image in full size
+<img width="699" height="142" alt="Screenshot 2025-08-26 at 8 59 21 PM" src="https://github.com/user-attachments/assets/5001f4ff-3d5d-4625-9dc5-68ba802718f8" />
+Leaving behind a malicious service that allows the adversary to log back into the target is what?
+Since the answer can be found above, I won’t be posting it. You can follow along to learn and discover where they are located.
+
+Scroll up to the Section with MITRE Tactic TA0003, the last bullet point is where you can find the answer, the highlighted part describes what the question is asking. Once you find it, highlight & copy (ctrl +c ) or type the answer into the TryHackMe answer field, then click submit.
+<img width="715" height="110" alt="Screenshot 2025-08-26 at 8 59 28 PM" src="https://github.com/user-attachments/assets/6cd6ab07-7285-4284-8d15-6c70d646749d" />
+Task 6 Phase: Through (Network Propagation)
+This phase follows a successful foothold being established on the target network. An attacker would seek to gain additional access and privileges to systems and data to fulfil their goals. The attacker would set up a base on one of the systems to act as their pivot point and use it to gather information about the internal network.
+
+Press enter or click to view image in full size
+<img width="763" height="466" alt="Screenshot 2025-08-26 at 8 59 42 PM" src="https://github.com/user-attachments/assets/f078c05c-ea6d-4fb6-af30-8409d4fcf8e0" />
