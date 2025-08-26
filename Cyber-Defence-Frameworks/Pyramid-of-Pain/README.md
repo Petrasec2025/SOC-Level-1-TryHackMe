@@ -1,8 +1,5 @@
-# PetrasCyberExpert GitHub Portfolio
+# Pyramid-of-Pain
 
-![GitHub Repo Size](https://img.shields.io/github/repo-size/Petrasec2025)
-![GitHub Language](https://img.shields.io/github/languages/top/Petrasec2025)
-![LinkedIn](https://img.shields.io/badge/LinkedIn-Petras--Cyber-blue?logo=linkedin)
 
 ## Description
 Welcome to my cybersecurity portfolio! This repository showcases my hands-on experience in threat hunting, incident response, malware analysis, and network security exercises. It includes tasks and practical exercises completed from various platforms like TryHackMe, focusing on the **Pyramid of Pain**, TTPs, host and network artifacts, and malware analysis.
