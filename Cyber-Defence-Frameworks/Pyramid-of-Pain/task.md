@@ -7,8 +7,6 @@ This well-renowned concept is applied to cybersecurity solutions like Cisco Secu
 Understanding the Pyramid of Pain concept is important for Threat Hunters, Incident Responders, and SOC Analysts.
 
 <div align="center"> <img width="800" alt="Pyramid of Pain Screenshot" src="https://github.com/user-attachments/assets/c2c60ef0-09e4-4088-b839-e12c9065bd6f" /> </div>
----
-
 
 Task 2: Hash Values (Trivial)
 Hash Algorithms Overview
