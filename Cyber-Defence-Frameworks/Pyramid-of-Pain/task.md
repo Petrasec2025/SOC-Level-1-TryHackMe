@@ -1,4 +1,5 @@
 Pyramid of Pain – TryHackMe Lab Report
+--
 Task 1: Introduction
 
 This well-renowned concept is applied to cybersecurity solutions like Cisco Security, SentinelOne, and SOCRadar to improve the effectiveness of CTI (Cyber Threat Intelligence), threat hunting, and incident response exercises.
@@ -6,6 +7,7 @@ This well-renowned concept is applied to cybersecurity solutions like Cisco Secu
 Understanding the Pyramid of Pain concept is important for Threat Hunters, Incident Responders, and SOC Analysts.
 
 <div align="center"> <img width="800" alt="Pyramid of Pain Screenshot" src="https://github.com/user-attachments/assets/c2c60ef0-09e4-4088-b839-e12c9065bd6f" /> </div>
+---
 Task 2: Hash Values (Trivial)
 Hash Algorithms Overview
 
@@ -23,7 +25,7 @@ Hash lookup tools: VirusTotal, Metadefender Cloud (OPSWAT)
 
 Question: Analyse the report for hash b8ef959a9176aef07fdca8705254a163b50b49a17217a4ff0107487f59d4a35d.
 Answer: Sales_Receipt 5606.xls
-
+---
 Task 3: IP Address (Easy)
 
 IP addresses identify devices on a network. In the Pyramid of Pain, IP addresses are green.
@@ -39,7 +41,7 @@ Answer: 50.87.136.52
 
 First domain name the malicious process (PID 1632) communicates with:
 Answer: craftingalegacy.com
-
+---
 Task 4: Domain Names (Simple)
 
 Domain names map IPs to human-readable text:
@@ -75,7 +77,7 @@ Attack using Unicode in domains: Punycode attack
 
 Redirected website for https://tinyurl.com/bw7t8p4u
 <img width="680" alt="Redirect Screenshot" src="https://github.com/user-attachments/assets/9d8e4842-94dc-497c-a27b-0537361d10cd" />
-
+---
 Task 5: Host Artifacts (Annoying)
 
 Host artifacts include registry entries, processes, files, or IOCs left by attackers.
@@ -92,7 +94,7 @@ Malicious executable dropped: G_jugk.exe
 
 Vendors detecting host as malicious: 9
 <img width="740" alt="Vendors Screenshot" src="https://github.com/user-attachments/assets/2947cd16-945a-4844-84eb-098ca0b532be" />
-
+---
 Task 6: Network Artifacts (Annoying)
 
 Network artifacts (yellow zone of Pyramid of Pain) are harder for attackers to change. Examples: User-Agent strings, C2 info, URI patterns.
@@ -106,7 +108,7 @@ tshark --Y http.request -T fields -e http.host -e http.user_agent -r analysis_fi
 Browser for the User-Agent string: Internet Explorer
 <img width="670" alt="User Agent Browser Screenshot" src="https://github.com/user-attachments/assets/a07b1f4c-133b-4837-962d-618bc707d849" />
 <img width="1200" alt="User Agent Wireshark Screenshot" src="https://github.com/user-attachments/assets/6e57d934-d56c-4ed4-a0d6-57357548a32c" />
-
+---
 Task 7: Tools (Challenging)
 
 Attackers use utilities for maldocs, backdoors, EXEs, DLLs, payloads, or password crackers.
@@ -118,6 +120,7 @@ Method to determine file similarity: Fuzzy Hashing
 Alternative name: context triggered piecewise hashes
 
 <div align="center"> <img width="1440" alt="Fuzzy Hashing Screenshot" src="https://github.com/user-attachments/assets/1d27cb26-2074-4a56-aa23-b4f562d1ab5c" /> </div>
+---
 Task 8: TTPs (Tough)
 
 TTPs = Tactics, Techniques & Procedures (MITRE ATT&CK Matrix). Detection is critical because attackers cannot easily change TTPs.
@@ -127,12 +130,13 @@ Exfiltration techniques in MITRE ATT&CK: 9
 
 Chimera hacking group’s commercial RAT: Cobalt Strike
 <img width="1155" alt="Cobalt Strike Screenshot" src="https://github.com/user-attachments/assets/ad031821-d7c4-4805-b6d7-68c7ad367be7" />
-
+---
 Task 9: Practical – The Pyramid of Pain
 
 Completed static site flag: THM{PYRAMIDS_COMPLETE}
 
 <div align="center"> <img width="665" alt="Static Site Screenshot" src="https://github.com/user-attachments/assets/72eb7680-92f4-4385-a74b-f7c61e67c60c" /> <img width="420" alt="Flag Screenshot" src="https://github.com/user-attachments/assets/d8aa8aa8-71d5-4d7c-a4dc-9c83ad823f9e" /> </div>
+---
 Conclusion
 
 Completing the Pyramid of Pain – TryHackMe room strengthened both theoretical understanding and hands-on skills in threat hunting, incident response, and CTI.
