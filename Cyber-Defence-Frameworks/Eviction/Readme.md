@@ -2,8 +2,9 @@
 
 ![Eviction Banner](https://github.com/user-attachments/assets/6bd5a96b-6d59-4616-90e9-26dd62c9c050)
 
-**Room Link:** [Eviction on TryHackMe](https://tryhackme.com/room/eviction)  
-**MITRE ATT&CK Navigator:** [Eviction Layer](https://static-labs.tryhackme.cloud/sites/eviction/)
+[![Room Difficulty](https://img.shields.io/badge/Difficulty-Beginner-brightgreen)](https://tryhackme.com/room/eviction)
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Visit-blue)](https://tryhackme.com/room/eviction)
+[![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK-orange)](https://static-labs.tryhackme.cloud/sites/eviction/)
 
 ---
 
