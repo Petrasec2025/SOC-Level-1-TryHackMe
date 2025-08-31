@@ -132,6 +132,6 @@ Sunny successfully thwarted APT28’s attempts to steal E-corp’s intellectual 
 ---
 
 **Walkthrough Author:** Petras Guilherme Kulyumba  
-**GitHub:** [@PetrasCyberExpert](https://github.com/PetrasCyberExpert)  
+**GitHub:** [@Petrasec2025](https://github.com/PetrasCyberExpert)  
 **Project:** Petrasec2025
 
