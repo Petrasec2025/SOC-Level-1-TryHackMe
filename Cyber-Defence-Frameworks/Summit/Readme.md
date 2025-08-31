@@ -1,5 +1,9 @@
 # TryHackMe — Summit Room
 
+![TryHackMe](https://img.shields.io/badge/TryHackMe-Purple?style=for-the-badge&logo=tryhackme)
+![Room Type](https://img.shields.io/badge/Room-Purple--Team-blue?style=for-the-badge)
+![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=for-the-badge)
+
 ## Room Overview
 
 **Summit** is a **purple-team simulation room** on TryHackMe that helps learners improve their **malware detection and prevention skills** in a realistic environment. This room simulates internal user workstations where an adversary attempts to execute malware, while you configure security tools to detect and stop threats.
@@ -51,3 +55,12 @@ It is recommended to complete the following rooms/modules before attempting Summ
 ## Additional Notes
 
 This room is **subscriber-only** and is ideal for cybersecurity learners who want to gain **practical experience with malware analysis, threat hunting, and detection engineering** in a controlled environment. Following the Pyramid of Pain helps you understand the **cost of evasion for attackers** and the **importance of layered defenses**.
+
+---
+
+## References
+
+- [TryHackMe Summit Room](https://tryhackme.com/room/summit)  
+- [Pyramid of Pain](https://www.mitre.org/publications/white-papers/the-pyramid-of-pain)  
+- [MITRE ATT&CK Framework](https://attack.mitre.org/)  
+- [Sigma Rules Documentation](https://sigmahq.org/)  
