@@ -67,3 +67,38 @@ The registry keys that Sunny should observe to track these changes is
 Answer: Registry Run Keys
 
 6. Sunny identified that the APT executes system binaries to evade defences. Which system binary’s execution should Sunny scrutinize for proxy execution?
+<img width="697" height="631" alt="Screenshot 2025-09-01 at 12 09 23 AM" src="https://github.com/user-attachments/assets/170ca304-2dfd-4428-85f0-ed0c0b57bbf6" />
+<img width="687" height="320" alt="Screenshot 2025-09-01 at 12 09 29 AM" src="https://github.com/user-attachments/assets/b580dcbc-a055-4a4a-9905-6e1830306d08" />
+Sunny should scrutinize rundll32.exe This system binary is commonly used by attackers to proxy the execution of other malicious code, helping them evade defenses.
+
+Answer: Rundll32
+
+7. Sunny identified tcpdump on one of the compromised hosts. Assuming this was placed there by the threat actor, which technique might the APT be using here for discovery?
+   <img width="681" height="621" alt="Screenshot 2025-09-01 at 12 09 37 AM" src="https://github.com/user-attachments/assets/2e895952-d4d0-46be-a3a8-efef216f9f85" />
+   <img width="680" height="322" alt="Screenshot 2025-09-01 at 12 09 43 AM" src="https://github.com/user-attachments/assets/0cafed5d-a336-46ac-b613-df671fe34f74" />
+
+The presence of tcpdump on the host could indicate the use of Network Sniffing. This technique allows the attacker to capture network traffic and gather valuable information about the internal network.
+
+Answer: Network Sniffing
+
+8. It looks like the APT achieved lateral movement by exploiting remote services. Which remote services should Sunny observe to identify APT activity traces?
+   <img width="695" height="619" alt="Screenshot 2025-09-01 at 12 09 51 AM" src="https://github.com/user-attachments/assets/fcff3360-15c8-47a3-b95d-463c35f658ba" />
+APT28 may exploit SMB/Windows Admin Shares
+
+Answer: SMB/Windows Admin Shares
+<img width="694" height="332" alt="Screenshot 2025-09-01 at 12 09 58 AM" src="https://github.com/user-attachments/assets/cb512ad2-5436-4c39-85c2-e3dc17baeaee" />
+
+9. It looked like the primary goal of the APT was to steal intellectual property from E-corp’s information repositories. Which information repository can be the likely target of the APT?
+    <img width="687" height="637" alt="Screenshot 2025-09-01 at 12 10 05 AM" src="https://github.com/user-attachments/assets/26ffb73b-51d6-45af-b4ce-0e76d95a4dd6" />
+<img width="682" height="282" alt="Screenshot 2025-09-01 at 12 10 12 AM" src="https://github.com/user-attachments/assets/c98b23c0-9c12-4e79-b01e-cff38a42c404" />
+Answer: Sharepoint
+
+10. Although the APT had collected the data, it could not connect to the C2 for data exfiltration. To thwart any attempts to do that, what types of proxy might the APT use? (Answer format: <technique 1> and <technique 2>)
+
+Press enter or click to view image in full size
+<img width="681" height="629" alt="Screenshot 2025-09-01 at 12 10 20 AM" src="https://github.com/user-attachments/assets/f0564add-0bc3-4652-81d4-f5375b532ade" />
+<img width="694" height="706" alt="Screenshot 2025-09-01 at 12 10 30 AM" src="https://github.com/user-attachments/assets/48015736-2abd-4112-95c6-7593d3a0d703" />
+Answer: External Proxy and Multi-hop Proxy
+
+11. Congratulations! You have helped Sunny successfully thwart the APT’s nefarious designs by stopping it from achieving its goal of stealing the IP of E-corp.
+<img width="692" height="442" alt="Screenshot 2025-09-01 at 12 10 36 AM" src="https://github.com/user-attachments/assets/dc8cea8b-7cd4-4e8c-b909-613856ec46c3" />
