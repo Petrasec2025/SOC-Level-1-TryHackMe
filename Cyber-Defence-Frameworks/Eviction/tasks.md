@@ -1,104 +1,137 @@
-Eviction— SOC Level 1 -Cyber Defence Frameworks — TryHackMe Challenge Walkthrough
+# TryHackMe — Eviction (SOC Level 1: Cyber Defence Frameworks)
 
-<img width="679" height="342" alt="Screenshot 2025-09-01 at 12 01 57 AM" src="https://github.com/user-attachments/assets/6bd5a96b-6d59-4616-90e9-26dd62c9c050" />
+![Eviction Banner](https://github.com/user-attachments/assets/6bd5a96b-6d59-4616-90e9-26dd62c9c050)
 
-Site Link: https://tryhackme.com/room/eviction
-Task 1
-Understand the adversary
-<img width="707" height="265" alt="Screenshot 2025-09-01 at 12 02 08 AM" src="https://github.com/user-attachments/assets/e2f9e177-cafd-41cf-84f4-e062b57058f3" />
-Sunny is a SOC analyst at E-corp, which manufactures rare earth metals for government and non-government clients. She receives a classified intelligence report that informs her that an APT group (APT28) might be trying to attack organizations similar to E-corp. To act on this intelligence, she must use the MITRE ATT&CK Navigator to identify the TTPs used by the APT group, to ensure it has not already intruded into the network, and to stop it if it has.
+**Room Link:** [Eviction on TryHackMe](https://tryhackme.com/room/eviction)  
+**MITRE ATT&CK Navigator:** [Eviction Layer](https://static-labs.tryhackme.cloud/sites/eviction/)
 
-Please visit this link (https://static-labs.tryhackme.cloud/sites/eviction/)
+---
 
-to check out the MITRE ATT&CK Navigator layer for the APT group and answer the questions below.
-<img width="681" height="327" alt="Screenshot 2025-09-01 at 12 02 20 AM" src="https://github.com/user-attachments/assets/9d44e1c0-8e62-4d4d-9840-28c3f2b1d8e5" />
-Answer the questions below
+## Overview
 
-What is a technique used by the APT to both perform recon and gain initial access?
-Expand the view to see the technique
-<img width="712" height="641" alt="Screenshot 2025-09-01 at 12 02 29 AM" src="https://github.com/user-attachments/assets/1729c776-6f85-4da1-ad49-0fdb2554a0d0" />
-APT28 often uses Spearphishing Attachment to conduct recon and gain initial access simultaneously. They send carefully crafted emails with malicious attachments to target employees, gaining access when the target opens the attachment.
+Sunny is a SOC analyst at **E-corp**, which manufactures rare earth metals. She receives a classified intelligence report indicating that **APT28** may target organizations like E-corp. Sunny must use the **MITRE ATT&CK Navigator** to:
 
-Answer: Spearphishing Link
+- Identify TTPs used by APT28  
+- Ensure the network has not been compromised  
+- Stop the APT if it has intruded  
 
-2. Sunny identified that the APT might have moved forward from the recon phase. Which accounts might the APT compromise while developing resources?
-   <img width="686" height="296" alt="Screenshot 2025-09-01 at 12 02 38 AM" src="https://github.com/user-attachments/assets/bb0dd279-dcc1-4933-bcc0-e20e89bf819a" />
-   Because it Spearphishing the accounts that might the APT compromise while developing resources
+![Task 1](https://github.com/user-attachments/assets/e2f9e177-cafd-41cf-84f4-e062b57058f3)
 
-Press enter or click to view image in full size
+---
 
-<img width="677" height="284" alt="Screenshot 2025-09-01 at 12 02 45 AM" src="https://github.com/user-attachments/assets/3da58cbd-50ce-48d7-88f1-6214886e63d5" />
-Answer: Email Account
+## Task 1: Understand the Adversary
 
-3. E-corp has found that the APT might have gained initial access using social engineering to make the user execute code for the threat actor. Sunny wants to identify if the APT was also successful in execution. What two techniques of user execution should Sunny look out for? (Answer format: <technique 1> and <technique 2>)
+### Q1: Technique used by APT for recon and initial access
 
-Press enter or click to view image in full size
-<img width="713" height="286" alt="Screenshot 2025-09-01 at 12 05 34 AM" src="https://github.com/user-attachments/assets/cd4d1b84-1125-4a8a-8462-0dffcc001f35" />
-The two techniques of user execution should Sunny look out for is
+APT28 often uses **Spearphishing Attachments** to gather intelligence and gain initial access simultaneously.  
 
-The first one is the Malicious File
-<img width="697" height="699" alt="Screenshot 2025-09-01 at 12 05 44 AM" src="https://github.com/user-attachments/assets/917f4cd9-afd8-411f-8ea2-d975518dfeda" />
-The second one is Malicious Link
-<img width="698" height="640" alt="Screenshot 2025-09-01 at 12 05 51 AM" src="https://github.com/user-attachments/assets/dc36811c-25c4-405a-8713-530d00ead0c8" />
-These interpreters are commonly abused by attackers for code execution once the initial compromise occurs.
+**Answer:** `Spearphishing Link`
 
-Answer: Malicious File and Malicuious Link
+![Spearphishing Technique](https://github.com/user-attachments/assets/1729c776-6f85-4da1-ad49-0fdb2554a0d0)
 
-4. If the above technique was successful, which scripting interpreters should Sunny search for to identify successful execution? (Answer format: <technique 1> and <technique 2>)
-   <img width="687" height="290" alt="Screenshot 2025-09-01 at 12 05 58 AM" src="https://github.com/user-attachments/assets/554166f7-b366-439e-a11f-715b5fa3803d" />
+---
 
-The scripting interpreters should Sunny search for to identify successful execution
+### Q2: Accounts the APT might compromise
 
-the first one
-<img width="687" height="644" alt="Screenshot 2025-09-01 at 12 06 04 AM" src="https://github.com/user-attachments/assets/de550d42-d9df-408d-a696-020736aad0bf" />
+APT28 targets accounts while developing resources via spearphishing.  
 
-The second one
-<img width="720" height="658" alt="Screenshot 2025-09-01 at 12 06 12 AM" src="https://github.com/user-attachments/assets/3b51a60c-f31e-43b4-b112-9fc6a5ee1112" />
-Answer: PowerShell and Windowes Command Shell
+**Answer:** `Email Account`
 
-5. While looking at the scripting interpreters identified in Q4, Sunny found some obfuscated scripts that changed the registry. Assuming these changes are for maintaining persistence, which registry keys should Sunny observe to track these changes? (Question Hint Use the exact text from the ATT&CK Navigator.
+![Email Account Compromise](https://github.com/user-attachments/assets/3da58cbd-50ce-48d7-88f1-6214886e63d5)
 
-Now we at the Persistence Stage
-<img width="686" height="636" alt="Screenshot 2025-09-01 at 12 06 22 AM" src="https://github.com/user-attachments/assets/1b577b2e-ad8a-4b37-bdc1-6ee76a109a59" />
+---
 
-<img width="688" height="308" alt="Screenshot 2025-09-01 at 12 06 29 AM" src="https://github.com/user-attachments/assets/b7af563c-5de7-48b0-87bd-2f13821e1908" />
-The registry keys that Sunny should observe to track these changes is
+### Q3: User execution techniques
 
-Answer: Registry Run Keys
+APT28 may trick users into executing code. Sunny should monitor:
 
-6. Sunny identified that the APT executes system binaries to evade defences. Which system binary’s execution should Sunny scrutinize for proxy execution?
-<img width="697" height="631" alt="Screenshot 2025-09-01 at 12 09 23 AM" src="https://github.com/user-attachments/assets/170ca304-2dfd-4428-85f0-ed0c0b57bbf6" />
-<img width="687" height="320" alt="Screenshot 2025-09-01 at 12 09 29 AM" src="https://github.com/user-attachments/assets/b580dcbc-a055-4a4a-9905-6e1830306d08" />
-Sunny should scrutinize rundll32.exe This system binary is commonly used by attackers to proxy the execution of other malicious code, helping them evade defenses.
+**Answer:** `Malicious File and Malicious Link`
 
-Answer: Rundll32
+![Malicious File Execution](https://github.com/user-attachments/assets/917f4cd9-afd8-411f-8ea2-d975518dfeda)  
+![Malicious Link Execution](https://github.com/user-attachments/assets/dc36811c-25c4-405a-8713-530d00ead0c8)
 
-7. Sunny identified tcpdump on one of the compromised hosts. Assuming this was placed there by the threat actor, which technique might the APT be using here for discovery?
-   <img width="681" height="621" alt="Screenshot 2025-09-01 at 12 09 37 AM" src="https://github.com/user-attachments/assets/2e895952-d4d0-46be-a3a8-efef216f9f85" />
-   <img width="680" height="322" alt="Screenshot 2025-09-01 at 12 09 43 AM" src="https://github.com/user-attachments/assets/0cafed5d-a336-46ac-b613-df671fe34f74" />
+---
 
-The presence of tcpdump on the host could indicate the use of Network Sniffing. This technique allows the attacker to capture network traffic and gather valuable information about the internal network.
+### Q4: Scripting interpreters for execution
 
-Answer: Network Sniffing
+Sunny should search for these interpreters if malicious execution occurs:
 
-8. It looks like the APT achieved lateral movement by exploiting remote services. Which remote services should Sunny observe to identify APT activity traces?
-   <img width="695" height="619" alt="Screenshot 2025-09-01 at 12 09 51 AM" src="https://github.com/user-attachments/assets/fcff3360-15c8-47a3-b95d-463c35f658ba" />
-APT28 may exploit SMB/Windows Admin Shares
+**Answer:** `PowerShell and Windows Command Shell`
 
-Answer: SMB/Windows Admin Shares
-<img width="694" height="332" alt="Screenshot 2025-09-01 at 12 09 58 AM" src="https://github.com/user-attachments/assets/cb512ad2-5436-4c39-85c2-e3dc17baeaee" />
+![PowerShell Execution](https://github.com/user-attachments/assets/de550d42-d9df-408d-a696-020736aad0bf)  
+![Windows Command Shell Execution](https://github.com/user-attachments/assets/3b51a60c-f31e-43b4-b112-9fc6a5ee1112)
 
-9. It looked like the primary goal of the APT was to steal intellectual property from E-corp’s information repositories. Which information repository can be the likely target of the APT?
-    <img width="687" height="637" alt="Screenshot 2025-09-01 at 12 10 05 AM" src="https://github.com/user-attachments/assets/26ffb73b-51d6-45af-b4ce-0e76d95a4dd6" />
-<img width="682" height="282" alt="Screenshot 2025-09-01 at 12 10 12 AM" src="https://github.com/user-attachments/assets/c98b23c0-9c12-4e79-b01e-cff38a42c404" />
-Answer: Sharepoint
+---
 
-10. Although the APT had collected the data, it could not connect to the C2 for data exfiltration. To thwart any attempts to do that, what types of proxy might the APT use? (Answer format: <technique 1> and <technique 2>)
+### Q5: Registry keys for persistence
 
-Press enter or click to view image in full size
-<img width="681" height="629" alt="Screenshot 2025-09-01 at 12 10 20 AM" src="https://github.com/user-attachments/assets/f0564add-0bc3-4652-81d4-f5375b532ade" />
-<img width="694" height="706" alt="Screenshot 2025-09-01 at 12 10 30 AM" src="https://github.com/user-attachments/assets/48015736-2abd-4112-95c6-7593d3a0d703" />
-Answer: External Proxy and Multi-hop Proxy
+APT28 may modify registry keys to maintain persistence. Sunny should observe:
 
-11. Congratulations! You have helped Sunny successfully thwart the APT’s nefarious designs by stopping it from achieving its goal of stealing the IP of E-corp.
-<img width="692" height="442" alt="Screenshot 2025-09-01 at 12 10 36 AM" src="https://github.com/user-attachments/assets/dc8cea8b-7cd4-4e8c-b909-613856ec46c3" />
+**Answer:** `Registry Run Keys`
+
+![Registry Run Keys](https://github.com/user-attachments/assets/b7af563c-5de7-48b0-87bd-2f13821e1908)
+
+---
+
+### Q6: System binary for proxy execution
+
+APT28 uses system binaries to evade defenses. Sunny should monitor:
+
+**Answer:** `Rundll32`
+
+![Rundll32 Proxy Execution](https://github.com/user-attachments/assets/b580dcbc-a055-4a4a-9905-6e1830306d08)
+
+---
+
+### Q7: Discovery technique using tcpdump
+
+Presence of `tcpdump` indicates network traffic monitoring.  
+
+**Answer:** `Network Sniffing`
+
+![Network Sniffing](https://github.com/user-attachments/assets/0cafed5d-a336-46ac-b613-df671fe34f74)
+
+---
+
+### Q8: Remote services for lateral movement
+
+APT28 may exploit these for lateral movement:
+
+**Answer:** `SMB/Windows Admin Shares`
+
+![SMB Lateral Movement](https://github.com/user-attachments/assets/cb512ad2-5436-4c39-85c2-e3dc17baeaee)
+
+---
+
+### Q9: Likely information repository targeted
+
+APT28 aims to steal intellectual property from:
+
+**Answer:** `SharePoint`
+
+![SharePoint Repository](https://github.com/user-attachments/assets/c98b23c0-9c12-4e79-b01e-cff38a42c404)
+
+---
+
+### Q10: Proxy types for C2 evasion
+
+APT28 may use proxies to avoid detection during exfiltration:
+
+**Answer:** `External Proxy and Multi-hop Proxy`
+
+![Proxy Techniques](https://github.com/user-attachments/assets/48015736-2abd-4112-95c6-7593d3a0d703)
+
+---
+
+## ✅ Conclusion
+
+Sunny successfully thwarted APT28’s attempts to steal E-corp’s intellectual property by analyzing the **MITRE ATT&CK Navigator** and monitoring key TTPs.
+
+![Eviction Completed](https://github.com/user-attachments/assets/dc8cea8b-7cd4-4e8c-b909-613856ec46c3)
+
+---
+
+**Walkthrough Author:** Petras Guilherme Kulyumba  
+**GitHub:** [@PetrasCyberExpert](https://github.com/PetrasCyberExpert)  
+**Project:** Petrasec2025
+
