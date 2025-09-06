@@ -327,6 +327,73 @@ If you are running Loki on your own system, the first command you should run is 
 
 Listing Loki signature-base directory
 
+<img width="793" height="388" alt="Screenshot 2025-09-06 at 8 07 31 PM" src="https://github.com/user-attachments/assets/af305ffa-9515-43dd-939f-52a31415a9c3" />
+Navigate to the yara directory.
+
+<img width="758" height="248" alt="Screenshot 2025-09-06 at 8 07 39 PM" src="https://github.com/user-attachments/assets/24e1bd13-08e7-4b13-b9e6-2b422a530ca1" />
+Feel free to inspect the different Yara files used by Loki to get an idea of what these rules will hunt for.
+
+To run Loki, you can use the following command (note that I am calling Loki from within the file 1 directory)
+
+Instructing Loki to scan the suspicious file
+
+<img width="683" height="81" alt="Screenshot 2025-09-06 at 8 07 48 PM" src="https://github.com/user-attachments/assets/70e4410e-7085-477b-9a06-62d19028b542" />
+Scenario: You are the security analyst for a mid-size law firm. A co-worker discovered suspicious files on a web server within your organization. These files were discovered while performing updates to the corporate website. The files have been copied to your machine for analysis. The files are located in the suspicious-files directory. Use Loki to answer the questions below.
+
+Answer the questions below
+
+8.1 Scan file 1. Does Loki detect this file as suspicious/malicious or benign?
+
+Listed the contents of the home directory
+
+Navigate to suspicious-files and listed the Contents
+
+Navigate to file1 and run the loki.py Script
+
+<img width="705" height="479" alt="Screenshot 2025-09-06 at 8 07 58 PM" src="https://github.com/user-attachments/assets/78d202aa-7e28-4a47-aae9-d59da3dae5cd" />
+
+<img width="675" height="513" alt="Screenshot 2025-09-06 at 8 08 06 PM" src="https://github.com/user-attachments/assets/6836fa11-02f0-4f35-8a47-54d85ac8c11c" />
+
+Answer: Suspicious
+
+8.2 What Yara rule did it match on?
+
+<img width="679" height="510" alt="Screenshot 2025-09-06 at 8 08 15 PM" src="https://github.com/user-attachments/assets/979bd7f4-e86b-495b-948f-2efd1b923392" />
+Answer: webshell_metaslsoft
+
+8.3 What does Loki classify this file as? (Question Hint Check description)
+
+Press enter or click to view image in full size
+
+<img width="670" height="514" alt="Screenshot 2025-09-06 at 8 08 27 PM" src="https://github.com/user-attachments/assets/ea9848ba-533f-47c8-af5f-0aed76480c91" />
+Answer: Web shell
+
+8.4 Based on the output, what string within the Yara rule did it match on?
+
+<img width="680" height="506" alt="Screenshot 2025-09-06 at 8 08 36 PM" src="https://github.com/user-attachments/assets/16d9b690-c496-4a0f-adfb-3740119d1e56" />
+Answer: str1
+
+8.5 What is the name and version of this hack tool?
+
+The first bytes show that the file starts with a PHP tag (<?php), followed by the string /*b374k 2.2, which reveals that the file contains a b374k web shell tool, version 2.2.
+
+
+<img width="679" height="504" alt="Screenshot 2025-09-06 at 8 08 48 PM" src="https://github.com/user-attachments/assets/b5c20c99-f859-4f30-8b77-d2af7b3b6fe4" />
+
+Answer: b374k 2.2
+
+8.6 Inspect the actual Yara file that flagged file 1. Within this rule, how many strings are there to flag this file? (Question Hint yara/thor-webshells.yar)
+
+Navigate to the signature-base/yara directory
+
+Navigating to signature-basels
+
+<img width="712" height="189" alt="Screenshot 2025-09-06 at 8 08 56 PM" src="https://github.com/user-attachments/assets/18c20b93-794f-46b9-87d2-cb5d71497eff" />
+List the Yara files in the directory
+
+<img width="695" height="180" alt="Screenshot 2025-09-06 at 8 09 04 PM" src="https://github.com/user-attachments/assets/ea24a360-0c34-4d06-bc72-b02a1e4e179c" />
+Inspect Yara rule thor-webshells.yar using nano text editor to see how many strings are used for flagging files
+
 
 
 
