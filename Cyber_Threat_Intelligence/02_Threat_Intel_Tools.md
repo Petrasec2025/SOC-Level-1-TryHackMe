@@ -22,7 +22,8 @@ This room will cover the concepts of Threat Intelligence and various open-source
 - Using **Cisco Talos Intelligence** platform for intel gathering.  
 
 📷 Screenshot:  
-![Task 1 Room Outline](<img width="1368" height="268" alt="Screenshot 2025-09-06 at 6 39 25 PM" src="https://github.com/user-attachments/assets/29613afe-1d0f-4629-9fb8-74d632cc448a" />)
+<img width="1368" height="268" alt="Screenshot 2025-09-06 at 6 39 25 PM" src="https://github.com/user-attachments/assets/2a4504e1-e75b-4355-81d3-dc775fefa9e6" />
+
 
 ---
 
@@ -45,7 +46,7 @@ Threat Intel is geared towards understanding the relationship between your opera
 - **Operational Intel:** Looks into an adversary’s specific motives and intent to perform an attack. Security teams may use this intel to understand the critical assets available in the organisation (people, processes, and technologies) that may be targeted.  
 
 📷 Screenshot:  
-![Threat Intel Classifications](<img width="552" height="556" alt="Screenshot 2025-09-06 at 6 42 31 PM" src="https://github.com/user-attachments/assets/319ee461-0c14-4342-82a3-90a5fdb8855d" />)
+<img width="552" height="556" alt="Screenshot 2025-09-06 at 6 42 31 PM" src="https://github.com/user-attachments/assets/0439777f-a6d3-43da-915a-d6431e9c6857" />
 
 ---
 
@@ -54,8 +55,9 @@ Threat Intel is geared towards understanding the relationship between your opera
 Urlscan.io is a free service developed to assist in scanning and analysing websites. It automates browsing and crawling to record activities and interactions.  
 
 📷 Screenshots:  
-![UrlScan Interface](<img width="785" height="581" alt="Screenshot 2025-09-06 at 6 43 23 PM" src="https://github.com/user-attachments/assets/dbb7af8e-91b0-4c0b-87ee-9747a51e4b81" />)  
-![UrlScan Scan Results](<img width="772" height="627" alt="Screenshot 2025-09-06 at 6 43 16 PM" src="https://github.com/user-attachments/assets/4e11f07f-b864-40f9-9e23-d3a3ea6e5ed7" />)
+<img width="785" height="581" alt="Screenshot 2025-09-06 at 6 43 23 PM" src="https://github.com/user-attachments/assets/86fcfa35-5501-4b05-ba4a-1022f4d5920c" />
+
+<img width="772" height="627" alt="Screenshot 2025-09-06 at 6 43 16 PM" src="https://github.com/user-attachments/assets/acd8ed37-4017-4ce7-80fc-73d63fb8777e" />
 
 ### Scan Results
 URL scan results provide information in the following key areas:  
@@ -68,7 +70,8 @@ URL scan results provide information in the following key areas:
 - **Indicators:** IPs, domains, and hashes associated with the site (do not imply malicious activity).  
 
 📷 Screenshot:  
-![UrlScan Key Areas](<img width="1360" height="763" alt="Screenshot 2025-09-06 at 6 44 18 PM" src="https://github.com/user-attachments/assets/a0e656f2-be69-4b9f-9bde-cb0993c9d743" />)
+<img width="1360" height="763" alt="Screenshot 2025-09-06 at 6 44 18 PM" src="https://github.com/user-attachments/assets/28fc5998-2607-402a-a5e3-1f3a41dc50fd" />
+
 
 **Note:** Data can vary day to day due to dynamic internet activity.
 
@@ -79,7 +82,7 @@ URL scan results provide information in the following key areas:
 You have been tasked to perform a scan on TryHackMe's domain. The results are displayed below.  
 
 📷 Screenshot:  
-![TryHackMe Scan](<img width="1346" height="750" alt="Screenshot 2025-09-06 at 6 57 28 PM" src="https://github.com/user-attachments/assets/45bc35e5-17e2-405a-96d0-3004be8d58b1" />)
+<img width="1346" height="750" alt="Screenshot 2025-09-06 at 6 57 28 PM" src="https://github.com/user-attachments/assets/f16e677d-1ad6-464f-b1d8-417e1561865d" />
 
 **Information Recorded:**  
 - Domains & IP addresses contacted  
@@ -100,19 +103,23 @@ You have been tasked to perform a scan on TryHackMe's domain. The results are di
 
 1. **What is TryHackMe’s Cisco Umbrella Rank?**  
 📷 Screenshot:  
-![Cisco Umbrella Rank](<img width="531" height="143" alt="Screenshot 2025-09-06 at 6 46 31 PM" src="https://github.com/user-attachments/assets/d7c8fac4-8cdf-4eef-9002-ebacd190e4ec" />)
+<img width="531" height="143" alt="Screenshot 2025-09-06 at 6 46 31 PM" src="https://github.com/user-attachments/assets/6415cc42-a94a-46cd-8346-db838202dcd2" />
+
 
 2. **How many domains did UrlScan.io identify?**  
 📷 Screenshot:  
-![Domains Identified](<img width="628" height="155" alt="Screenshot 2025-09-06 at 6 46 36 PM" src="https://github.com/user-attachments/assets/b5f6e045-0418-4fbb-a7b6-4a61054003d3" />)
+<img width="628" height="155" alt="Screenshot 2025-09-06 at 6 46 36 PM" src="https://github.com/user-attachments/assets/1c055bc2-50ad-4853-9a4a-24bdef5d4aaa" />
+
 
 3. **What is the main domain registrar listed?**  
 📷 Screenshot:  
-![Domain Registrar](<img width="496" height="116" alt="Screenshot 2025-09-06 at 6 46 41 PM" src="https://github.com/user-attachments/assets/dd13ace6-7372-4aa3-9a40-df0e1b6e5823" />)
+<img width="496" height="116" alt="Screenshot 2025-09-06 at 6 46 41 PM" src="https://github.com/user-attachments/assets/bacc948a-458e-4d80-b52e-a3ca2319c759" />
+
 
 4. **What is the main IP address identified?**  
 📷 Screenshot:  
-![Main IP Address](<img width="540" height="143" alt="Screenshot 2025-09-06 at 6 46 47 PM" src="https://github.com/user-attachments/assets/d4f92729-53e0-478a-bb08-efc6e51b52a8" />)
+<img width="540" height="143" alt="Screenshot 2025-09-06 at 6 46 47 PM" src="https://github.com/user-attachments/assets/5dcef07c-887d-4bb1-83e6-a0ae0b937bf5" />
+
 
 ---
 
