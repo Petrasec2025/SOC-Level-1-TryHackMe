@@ -499,8 +499,208 @@ Answer the questions below
 
 9.1 From within the root of the suspicious files directory, what command would you run to test Yara and your Yara rule against file 2? (Question Hint Use the same name I called the Yara file to answer this question)
 
+<img width="703" height="214" alt="Screenshot 2025-09-06 at 8 23 56 PM" src="https://github.com/user-attachments/assets/0487c5b0-f489-412d-8815-126696e74d3e" />
+
+We are inside the suspicious-files directory, so we do not need the full path (~/suspicious-files/).
+file2.yar > This is the YARA rule generated earlier.
+file2/1ndex.php > This is the actual suspicious web shell file inside the file2 directory.
+Running this command applies the YARA rule to 1ndex.php, checking for any matches.
+
+Answer: yara file2.yar file2/1ndex.php
+
+9.2 Did Yara rule flag file 2? (Yay/Nay)
+
+YARA flagged 1ndex.php as suspicious.
+The rule worked, and the file matches the patterns in file2.yar.
+
+Answer: Yay
+
+9.3 Copy the Yara rule you created into the Loki signatures directory.
+
+<img width="710" height="180" alt="Screenshot 2025-09-06 at 8 24 04 PM" src="https://github.com/user-attachments/assets/f5c2107b-4dc4-492a-b05c-2dc4fe327d7c" />
+Verify that the file was copied successfully
+
+<img width="678" height="210" alt="Screenshot 2025-09-06 at 8 24 14 PM" src="https://github.com/user-attachments/assets/e86aff76-69bd-4095-95b7-c5ec8016999c" />
+Answer: No answer nedeed
+
+9.4 Test the Yara rule with Loki, does it flag file 2? (Yay/Nay)
+
+Answer: Yay
+
+9.5 What is the name of the variable for the string that it matched on? (Question Hint Look at $x1)
+
+Checked the contents of file2.yar to identify the specific string that was flagged by your YARA rule.
+
+<img width="679" height="244" alt="Screenshot 2025-09-06 at 8 24 32 PM" src="https://github.com/user-attachments/assets/6216a0fe-df7d-4ea4-8c04-abb8455dbbd4" />
+The actual content of $x1 is the string that YARA matched.
+
+<img width="681" height="582" alt="Screenshot 2025-09-06 at 8 24 43 PM" src="https://github.com/user-attachments/assets/7f80c136-eae9-44d8-8648-104b454d2ae2" />
+This means the rule flagged file2 because it detected the presence of the Zepto.js function, which is often associated with certain web shell scripts or JavaScript-based exploits.
+
+Answer: Zepto
+
+9.6 Inspect the Yara rule, how many strings were generated?
+
+<img width="672" height="575" alt="Screenshot 2025-09-06 at 8 24 56 PM" src="https://github.com/user-attachments/assets/67531f29-6190-4939-8319-cdfb922cf628" />
+Number of strings in the Yara rule are 20
+
+Answer: 20
+
+9.7 One of the conditions to match on the Yara rule specifies file size. The file has to be less than what amount?
+
+<img width="686" height="564" alt="Screenshot 2025-09-06 at 8 25 08 PM" src="https://github.com/user-attachments/assets/3eaa71e6-f84b-4eef-bc03-4ab6966296ea" />
+The condition states that the file must be smaller than 700KB for the rule to trigger.
+
+Answer: 700KB
+
+Task 10 Valhalla
+Valhalla
+Valhalla is an online Yara feed created and hosted by Nextron-Systems (erm, Florian Roth). By now, you should be aware of the ridiculous amount of time and energy Florian has dedicated to creating these tools for the community. Maybe we should have just called this the Florian Roth room. (lol)
+
+Per the website, “Valhalla boosts your detection capabilities with the power of thousands of hand-crafted high-quality YARA rules.”
+
+<img width="673" height="301" alt="Screenshot 2025-09-06 at 8 25 20 PM" src="https://github.com/user-attachments/assets/4054cb77-c138-4829-b76a-76a791417cdc" />
+From the image above, we should denote that we can conduct searches based on a keyword, tag, ATT&CK technique, sha256, or rule name.
+
+Note: For more information on ATT&CK, please visit the MITRE room.
+
+<img width="684" height="166" alt="Screenshot 2025-09-06 at 8 25 28 PM" src="https://github.com/user-attachments/assets/11360c96-f2ab-40f4-a6c4-1ede8873b3a3" />
+Taking a look at the data provided to us, let’s examine the rule in the screenshot below:
+
+<img width="674" height="132" alt="Screenshot 2025-09-06 at 8 25 38 PM" src="https://github.com/user-attachments/assets/86d195c4-6a04-4cc9-9e2b-15e57e0f14a8" />
+We are provided with the name of the rule, a brief description, a reference link for more information about the rule, along with the rule date.
+
+Feel free to look at some rules to become familiar with the usefulness of Valhalla. The best way to learn the product is by just jumping right in.
+
+Picking up from our scenario, at this point, you know that the 2 files are related. Even though Loki classified the files are suspicious, you know in your gut that they are malicious. Hence the reason you created a Yara rule using yarGen to detect it on other web servers. But let’s further pretend that you are not code-savvy (FYI — not all security professionals know how to code/script or read it). You need to conduct further research regarding these files to receive approval to eradicate these files from the network.
+
+Time to use Valhalla for some threat intelligence gathering…
+
+Answer the questions below
+
+10.1 Enter the SHA256 hash of file 1 into Valhalla. Is this file attributed to an APT group? (Yay/Nay)
 
 
+<img width="685" height="233" alt="Screenshot 2025-09-06 at 8 25 46 PM" src="https://github.com/user-attachments/assets/c2ad19d9-4e23-4b28-a68d-7d0d73de7826" />
+Go to https://valhalla.nextron-systems.com/ and paste the hash
+
+<img width="688" height="638" alt="Screenshot 2025-09-06 at 8 25 56 PM" src="https://github.com/user-attachments/assets/c453c1c3-1fff-41c9-b31e-3e5a4288c388" />
+
+<img width="821" height="692" alt="Screenshot 2025-09-06 at 10 16 25 PM" src="https://github.com/user-attachments/assets/0d397a15-1e0d-4a5a-a144-e8c59cd1f6d3" />
 
 
+Results
 
+The file was detected by several YARA rules.
+
+One rule, “Webshell_b374k_Jan18_1”, has a description that says:
+
+“Detects hacktool / webshell I found in disclosed toolset of Chinese APT group.”
+
+This means the file was found in a hacking toolset used by a Chinese APT group.
+
+Answer: Yay
+
+10.2 Do the same for file 2. What is the name of the first Yara rule to detect file 2?
+
+<img width="730" height="282" alt="Screenshot 2025-09-06 at 10 16 33 PM" src="https://github.com/user-attachments/assets/72955f82-5dcd-4ebd-8167-b8ee9fd970a7" />
+Go to https://valhalla.nextron-systems.com/ and paste the hash
+
+<img width="705" height="707" alt="Screenshot 2025-09-06 at 10 16 41 PM" src="https://github.com/user-attachments/assets/4c349022-42ae-4bc6-9588-98a05d3befe4" />
+
+<img width="694" height="399" alt="Screenshot 2025-09-06 at 10 16 48 PM" src="https://github.com/user-attachments/assets/d41c8a9d-e8ba-490e-a62b-6e0dd9d61c95" />
+Results
+
+The file was detected 4 YARA rules.
+
+The first YARA rule that detected File 2, based on the oldest date (2015–10–16) in the results.
+
+Answer: Webshell_b374k_rule1
+
+10.3 Examine the information for file 2 from Virus Total (VT). The Yara Signature Match is from what scanner? (Question Hint This information is on the Community tab of the VirusTotal page, and not on the Detection tab)
+
+<img width="681" height="314" alt="Screenshot 2025-09-06 at 10 16 57 PM" src="https://github.com/user-attachments/assets/fb5735fe-b60e-4df3-bad1-79416467e933" />
+
+From the Community tab in VirusTotal, the YARA Signature Match is attributed to:
+
+This means the THOR APT Scanner identified the file as suspicious based on its YARA rules.
+
+Answer: THOR APT Scanner
+
+10.4 Enter the SHA256 hash of file 2 into Virus Total. Did every AV detect this as malicious? (Yay/Nay)
+
+<img width="677" height="373" alt="Screenshot 2025-09-06 at 10 17 04 PM" src="https://github.com/user-attachments/assets/8dc433df-1f6c-41c2-900f-fae725ec5368" />
+
+Answer: Nay
+
+10.5 Besides .PHP, what other extension is recorded for this file? (Question Hint Look under the “details” tab in Virustotal to find out the extensions for this submission)
+
+
+<img width="626" height="717" alt="Screenshot 2025-09-06 at 10 17 15 PM" src="https://github.com/user-attachments/assets/0326fd4c-f1c1-457f-a5a8-3fc2ebb09878" />
+
+The file list shows multiple extensions, including .PHP, .APK, .TXT, .CSV, .SYS, .HTML, and .EXE.
+
+.APK (Android application) — Android application package
+.CSV (Comma-separated values file) — A data storage format
+.SYS (System file) — A system file used by Windows
+.TXT (Text file) — A plain text file
+.HTML (Web page file) — A web page file
+.EXE (Executable file) — A Windows executable
+
+.EXE is important because it indicates that the same malware might also be distributed as an executable for Windows systems.
+This means the threat isn’t just limited to web-based attacks (PHP files on web servers) but could also be used for Windows-based infections.
+
+Answer: .EXE
+
+10.6 What JavaScript library is used by file 2? (Question Hint Go to the Github page and search inside the index.php file)
+
+Go to the Github pag: https://github.com/b374k/b374k
+
+<img width="678" height="140" alt="Screenshot 2025-09-06 at 10 17 23 PM" src="https://github.com/user-attachments/assets/a72fab98-a792-44bf-b8c6-3201d564826f" />
+The requirements section clearly states that zepto.js v1.1.2 is needed for the b374k shell to function properly.
+It also mentions that a modern browser is required to support Zepto.js.
+The link to the official Zepto.js website further confirms its usage in the script.
+Also
+
+Inside the index.php file
+
+<img width="681" height="232" alt="Screenshot 2025-09-06 at 10 17 30 PM" src="https://github.com/user-attachments/assets/8b14191e-f3a5-4b6c-ac13-e7ebe816aab5" />
+
+Line 27: The script loads zepto.js using:
+
+$zepto_code = packer_read_file($GLOBALS[‘packer’][‘base_dir’].”zepto.js”);
+
+This means that zepto.js is being read and used in the script.
+
+Line 34–35: The script dynamically sets a theme using cookies, which suggests that Zepto.js is likely involved in UI interactions.
+
+Line 30–31: Other JavaScript files (sortable.js, base.js, main.js) are also included, but Zepto.js is explicitly mentioned.
+
+It confirms that Zepto.js is being used in file 2
+
+Answer: Zepto
+
+10.7 Is this Yara rule in the default Yara file Loki uses to detect these type of hack tools? (Yay/Nay) (Question Hint Examine thor-webshell.yar and search for the rule name)
+
+The default Loki rules are stored in /home/cmnatic/tools/Loki/signature-base/yara/
+
+We need to search for the rule in Loki’s YARA rule repository
+
+<img width="711" height="163" alt="Screenshot 2025-09-06 at 10 17 38 PM" src="https://github.com/user-attachments/assets/c3a1a2bb-64fa-4366-bf36-a8724d00d1d7" />
+
+Since the command returned no output, this means that the rule is not present in Loki’s default YARA rules.
+
+Answer: Nay
+
+Task 11 Conclusion
+In this room, we explored Yara, how to use Yara, and manually created basic Yara rules. We also explored various open-source tools to hit the ground running that utilizes Yara rules to detect evil on endpoints.
+
+By going through the room scenario, you should understand the need (as a blue teamer) to know how to create Yara rules effectively if we rely on such tools. Commercial products, even though not perfect, will have a much richer Yara ruleset than an open-source product. Both commercial and open-source will allow you to add Yara rules to expand its capabilities further to detect threats.
+
+If it is not clear, the reason why file 2 was not detected is that the Yara rule was not in the Yara file used by Loki to detect the hack tool (web shell) even though its the hack tool has been around for years and has even been attributed to at least 1 nation-state. The Yara rule is present in the commercial variant of Loki, which is Thor.
+
+There is more that can be done with Yara and Yara rules. We encourage you to explore this tool further at your own leisure.
+
+Answer the questions below
+
+No answer needed.
