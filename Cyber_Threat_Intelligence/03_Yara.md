@@ -226,4 +226,107 @@ Remembering that the text within the red box is the name of our rule, and the te
 Anatomy of a Yara Rule
 
 
+<img width="619" height="666" alt="Screenshot 2025-09-06 at 7 54 57 PM" src="https://github.com/user-attachments/assets/71838c1d-a305-4e26-88a2-112fe9b7b68b" />
+
+<img width="611" height="267" alt="Screenshot 2025-09-06 at 7 55 06 PM" src="https://github.com/user-attachments/assets/34030e5f-c86d-43fb-aa26-1715db18dfc7" />
+Information security researcher “fr0gger_” has recently created a handy cheatsheet that breaks down and visualises the elements of a YARA rule (shown above, all image credits go to him). It’s a great reference point for getting started!
+
+Answer the questions below
+
+Upwards and onwards…
+
+Task 6 Yara Modules
+Integrating With Other Libraries
+Frameworks such as the Cuckoo Sandbox or Python’s PE Module allow you to improve the technicality of your Yara rules ten-fold.
+
+Cuckoo
+Cuckoo Sandbox is an automated malware analysis environment. This module allows you to generate Yara rules based upon the behaviours discovered from Cuckoo Sandbox. As this environment executes malware, you can create rules on specific behaviours such as runtime strings and the like.
+
+Python PE
+Python’s PE module allows you to create Yara rules from the various sections and elements of the Windows Portable Executable (PE) structure.
+
+Explaining this structure is out of scope as it is covered in my malware introductory room. However, this structure is the standard formatting of all executables and DLL files on windows. Including the programming libraries that are used.
+
+Examining a PE file’s contents is an essential technique in malware analysis; this is because behaviours such as cryptography or worming can be largely identified without reverse engineering or execution of the sample.
+
+Answer the questions below
+
+Sounds pretty cool!
+
+Task 7 Other tools and Yara
+Yara Tools
+Knowing how to create custom Yara rules is useful, but luckily you don’t have to create many rules from scratch to begin using Yara to search for evil. There are plenty of GitHub resources and open-source tools (along with commercial products) that can be utilized to leverage Yara in hunt operations and/or incident response engagements.
+
+LOKI (What, not who, is Loki?)
+LOKI is a free open-source IOC (Indicator of Compromise) scanner created/written by Florian Roth.
+
+Based on the GitHub page, detection is based on 4 methods:
+
+File Name IOC Check
+Yara Rule Check (we are here)
+Hash Check
+C2 Back Connect Check
+There are additional checks that LOKI can be used for. For a full rundown, please reference the GitHub readme.
+
+LOKI can be used on both Windows and Linux systems and can be downloaded here.
+
+Please note that you are not expected to use this tool in this room.
+
+Displaying Loki’s help menu
+
+
+<img width="673" height="400" alt="Screenshot 2025-09-06 at 7 57 37 PM" src="https://github.com/user-attachments/assets/f7ba577e-3b56-4704-b0cb-b9ed8ee3ba7d" />
+THOR (superhero named programs for a superhero blue teamer)
+THOR Lite is Florian’s newest multi-platform IOC AND YARA scanner. There are precompiled versions for Windows, Linux, and macOS. A nice feature with THOR Lite is its scan throttling to limit exhausting CPU resources. For more information and/or to download the binary, start here. You need to subscribe to their mailing list to obtain a copy of the binary. Note that THOR is geared towards corporate customers. THOR Lite is the free version.
+
+Please note that you are not expected to use this tool in this room.
+
+Displaying Thor Lite’s help menu
+
+<img width="679" height="585" alt="Screenshot 2025-09-06 at 7 57 46 PM" src="https://github.com/user-attachments/assets/46d74f76-1b9d-4042-88fa-4fc237e325af" />
+FENRIR (naming convention still mythical themed)
+This is the 3rd tool created by Neo23x0 (Florian Roth). You guessed it; the previous 2 are named above. The updated version was created to address the issue from its predecessors, where requirements must be met for them to function. Fenrir is a bash script; it will run on any system capable of running bash (nowadays even Windows).
+
+Please note that you are not expected to use this tool in this room.
+
+Running Fenrir
+
+<img width="678" height="312" alt="Screenshot 2025-09-06 at 7 57 55 PM" src="https://github.com/user-attachments/assets/95395a72-bc80-43b5-964d-b4977e08f39a" />
+YAYA (Yet Another Yara Automaton)
+YAYA was created by the EFF (Electronic Frontier Foundation) and released in September 2020. Based on their website, “YAYA is a new open-source tool to help researchers manage multiple YARA rule repositories. YAYA starts by importing a set of high-quality YARA rules and then lets researchers add their own rules, disable specific rulesets, and run scans of files.”
+
+Note: Currently, YAYA will only run on Linux systems.
+
+Running YAYA
+
+<img width="691" height="254" alt="Screenshot 2025-09-06 at 7 58 04 PM" src="https://github.com/user-attachments/assets/5dfd3583-0d7b-4cfc-9867-0538ab0f0f15" />
+In the next section, we will examine LOKI further…
+
+Answer the questions below
+
+Cool tools. I’m ready to use one of them.
+
+Task 8 Using LOKI and its Yara rule set
+Using LOKI
+As a security analyst, you may need to research various threat intelligence reports, blog postings, etc. and gather information on the latest tactics and techniques used in the wild, past or present. Typically in these readings, IOCs (hashes, IP addresses, domain names, etc.) will be shared so rules can be created to detect these threats in your environment, along with Yara rules. On the flip side, you might find yourself in a situation where you’ve encountered something unknown, that your security stack of tools can’t/didn’t detect. Using tools such as Loki, you will need to add your own rules based on your threat intelligence gathers or findings from an incident response engagement (forensics).
+
+As mentioned before, Loki already has a set of Yara rules that we can benefit from and start scanning for evil on the endpoint straightaway.
+
+Loki is located in the tools.
+
+Listing the tools directory
+
+<img width="722" height="291" alt="Screenshot 2025-09-06 at 8 00 14 PM" src="https://github.com/user-attachments/assets/af69e306-ac3c-41d2-bb12-174b93cffe32" />
+Navigate to the Loki directory.
+
+<img width="715" height="293" alt="Screenshot 2025-09-06 at 8 00 21 PM" src="https://github.com/user-attachments/assets/4c26fcbd-4c95-4343-b93f-0078a572f1ac" />
+Run python loki.py -h to see what options are available.
+
+<img width="960" height="710" alt="Screenshot 2025-09-06 at 8 00 31 PM" src="https://github.com/user-attachments/assets/970ed8c4-2c52-4c5d-b88e-32debe383360" />
+If you are running Loki on your own system, the first command you should run is --update. This will add the signature-base directory, which Loki uses to scan for known evil. This command was already executed within the attached VM.
+
+Listing Loki signature-base directory
+
+
+
 
