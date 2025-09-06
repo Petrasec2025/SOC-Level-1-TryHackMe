@@ -152,4 +152,78 @@ Congrats! I made my first rule.
 Answer the questions below
 
 One rule to — well — rule them all.
+Task 5 Expanding on Yara Rules
+Yara Conditions Continued…
+Checking whether or not a file exists isn’t all that helpful. After all, we can figure that out for ourselves…Using much better tools for the job.
+
+Yara has a few conditions, which I encourage you to read here at your own leisure.
+
+The following keywords are reserved and cannot be used as an identifier:
+<img width="678" height="288" alt="Screenshot 2025-09-06 at 7 47 29 PM" src="https://github.com/user-attachments/assets/57ad7bee-c89d-43fc-aee7-89a27b6ca507" />
+However, I’ll detail a few below and explain their purpose.
+
+Keyword
+Desc
+Meta
+Strings
+Conditions
+Weight
+
+Meta
+This section of a Yara rule is reserved for descriptive information by the author of the rule. For example, you can use desc, short for description, to summarise what your rule checks for. Anything within this section does not influence the rule itself. Similar to commenting code, it is useful to summarise your rule.
+
+Strings
+Remember our discussion about strings in Task 2? Well, here we go. You can use strings to search for specific text or hexadecimal in files or programs. For example, say we wanted to search a directory for all files containing “Hello World!”, we would create a rule such as below:
+<img width="680" height="142" alt="Screenshot 2025-09-06 at 7 47 41 PM" src="https://github.com/user-attachments/assets/d76ec73a-2427-4fb2-b06f-2a7de2ea020d" />
+We define the keyword Strings where the string that we want to search, i.e., "Hello World!" is stored within the variable $hello_world
+
+Of course, we need a condition here to make the rule valid. In this example, to make this string the condition, we need to use the variable's name. In this case, $hello_world:
+<img width="683" height="232" alt="Screenshot 2025-09-06 at 7 47 56 PM" src="https://github.com/user-attachments/assets/77959050-fe9c-4d92-b7fc-712e32a06267" />
+Essentially, if any file has the string “Hello World!” then the rule will match. However, this is literally saying that it will only match if “Hello World!” is found and will not match if “hello world” or “HELLO WORLD.”
+
+To solve this, the condition any of them allows multiple strings to be searched for, like below:
+<img width="677" height="271" alt="Screenshot 2025-09-06 at 7 48 07 PM" src="https://github.com/user-attachments/assets/80962eeb-8590-4b78-991e-b2d36ef44668" />
+Now, any file with the strings of:
+
+1. Hello World!
+
+2. hello world
+
+3. HELLO WORLD
+
+Will now trigger the rule.
+
+Conditions
+We have already used the true and any of them condition. Much like regular programming, you can use operators such as:
+
+<= less than or equal to
+>= more than or equal to
+!= not equal to
+For example, the rule below would do the following:
+><img width="682" height="230" alt="Screenshot 2025-09-06 at 7 48 18 PM" src="https://github.com/user-attachments/assets/e76a8820-dce1-4ea1-9af5-824f0c02d0f1" />
+
+The rule will now:
+1. Look for the “Hello World!” string
+2. Only say the rule matches if there are less than or equal to ten occurrences of the “Hello World!” string
+
+Combining keywords
+Moreover, you can use keywords such as:
+
+and
+not
+or
+To combine multiple conditions. Say if you wanted to check if a file has a string and is of a certain size (in this example, the sample file we are checking is less than <10 kb and has “Hello World!” you can use a rule like below:
+<img width="675" height="199" alt="Screenshot 2025-09-06 at 7 48 31 PM" src="https://github.com/user-attachments/assets/410c5deb-52e1-4731-ae30-1c5deff4f0ec" />
+The rule will only match if both conditions are true. To illustrate: below, the rule we created, in this case, did not match because although the file has “Hello World!”, it has a file size larger than 10KB:
+Yara failing to match the file mytextfile because it is larger than 10kb
+<img width="679" height="88" alt="Screenshot 2025-09-06 at 7 48 40 PM" src="https://github.com/user-attachments/assets/6b8d750d-0f18-427c-9e91-4e44cbcc4fba" />
+However, the rule matched this time because the file has both “Hello World!” and a file size of less than 10KB.
+
+Yara successfully matching the file mytextfile because it has “Hello World” and a file size of less than 10KB
+<img width="679" height="102" alt="Screenshot 2025-09-06 at 7 48 50 PM" src="https://github.com/user-attachments/assets/1c1e158d-c590-4a32-ac3d-41059c193b76" />
+Remembering that the text within the red box is the name of our rule, and the text within the green is the matched file.
+
+Anatomy of a Yara Rule
+
+
 
