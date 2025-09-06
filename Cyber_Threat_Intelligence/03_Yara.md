@@ -394,6 +394,113 @@ List the Yara files in the directory
 <img width="695" height="180" alt="Screenshot 2025-09-06 at 8 09 04 PM" src="https://github.com/user-attachments/assets/ea24a360-0c34-4d06-bc72-b02a1e4e179c" />
 Inspect Yara rule thor-webshells.yar using nano text editor to see how many strings are used for flagging files
 
+<img width="740" height="197" alt="Screenshot 2025-09-06 at 8 15 03 PM" src="https://github.com/user-attachments/assets/0883fcf8-9367-45c8-8c84-9752cb90826c" />
+
+<img width="674" height="582" alt="Screenshot 2025-09-06 at 8 15 09 PM" src="https://github.com/user-attachments/assets/d7e8aed3-3f92-417d-adc2-5b6191948c34" />
+
+Any one of the strings that match a part of the file will trigger the rule. This means if LOKI finds just one of the patterns (“eval(base64_decode(“), it will flag the file.
+
+The Yara rule you are inspecting has multiple strings, but only one string needs to match in the file for it to be flagged as suspicious or malicious.
+
+Answer: 1
+
+8.7 Scan file 2. Does Loki detect this file as suspicious/malicious or benign?
+
+Navigate to file 2 and Run LOKI to Scan
+
+<img width="716" height="561" alt="Screenshot 2025-09-06 at 8 15 18 PM" src="https://github.com/user-attachments/assets/a1b72041-8778-48ba-9e71-616b5315b9ef" />
+The scan results indicate that LOKI did not detect anything suspicious in file 2.
+
+<img width="676" height="424" alt="Screenshot 2025-09-06 at 8 15 27 PM" src="https://github.com/user-attachments/assets/b5126412-28eb-4958-8d59-6d167b15774b" />
+This suggests that file 2 is benign and does not pose any security threat based on the scan.
+
+Answer: Benign
+
+8.8 Inspect file 2. What is the name and version of this web shell? (Question Hint Read the comments in the file)
+
+Display the contents of 1ndex.php
+
+<img width="688" height="209" alt="Screenshot 2025-09-06 at 8 15 37 PM" src="https://github.com/user-attachments/assets/21c19a83-261f-44ed-9f3c-34c43180a0dc" />
+
+<img width="679" height="592" alt="Screenshot 2025-09-06 at 8 15 45 PM" src="https://github.com/user-attachments/assets/d7d68215-a977-49ce-a9b3-e9b3fde38687" />
+b374k is a web shell that allows attackers to control a compromised web server. It is a popular web shell used in penetration testing and web attacks.
+
+The version of this b374k shell is 3.2.3.
+
+Answer: b374k 3.2.3
+
+Task 9 Creating Yara rules with yarGen
+Creating Yara rules with yarGen
+From the previous section, we realized that we have a file that Loki didn’t flag on. At this point, we are unable to run Loki on other web servers because if file 2 exists in any of the webs servers, it will go undetected.
+
+We need to create a Yara rule to detect this specific web shell in our environment. Typically this is what is done in the case of an incident, which is an event that affects/impacts the organization in a negative fashion.
+
+We can manually open the file and attempt to sift through lines upon lines of code to find possible strings that can be used in our newly created Yara rule.
+
+Let’s check how many lines this particular file has. You can run the following: strings <file name> | wc -l.
+
+Using wc to count the amount of lines in the file
+
+<img width="687" height="216" alt="Screenshot 2025-09-06 at 8 15 56 PM" src="https://github.com/user-attachments/assets/39d0a278-d79b-4cca-8133-39e5783077aa" />
+If you try to go through each string, line by line manually, you should quickly realize that this can be a daunting task.
+
+Catting the output of 1ndex.php
+
+<img width="634" height="720" alt="Screenshot 2025-09-06 at 8 16 12 PM" src="https://github.com/user-attachments/assets/b976c461-47ed-46e2-aae4-81de7854eb2f" />
+Luckily, we can use yarGen (yes, another tool created by Florian Roth) to aid us with this task.
+
+What is yarGen? yarGen is a generator for YARA rules.
+
+From the README — “The main principle is the creation of yara rules from strings found in malware files while removing all strings that also appear in goodware files. Therefore yarGen includes a big goodware strings and opcode database as ZIP archives that have to be extracted before the first use.”
+
+Navigate to the yarGen directory, which is within tools.
+
+<img width="682" height="310" alt="Screenshot 2025-09-06 at 8 16 21 PM" src="https://github.com/user-attachments/assets/af2ab008-c381-4eff-a425-c1b3e9288334" />
+
+If you are running yarGen on your own system, you need to update it first by running the following command: python3 yarGen.py --update.
+
+This will update the good-opcodes and good-strings DB’s from the online repository. This update will take a few minutes.
+
+Once it has been updated successfully, you’ll see the following message at the end of the output.
+
+Updating yarGen
+
+<img width="638" height="397" alt="Screenshot 2025-09-06 at 8 16 33 PM" src="https://github.com/user-attachments/assets/f3d24c47-ab75-401b-b86a-2499fb8088a2" />
+
+To use yarGen to generate a Yara rule for file 2, you can run the following command:
+
+<img width="688" height="292" alt="Screenshot 2025-09-06 at 8 16 42 PM" src="https://github.com/user-attachments/assets/bc8bce07-8a2d-4a48-a19e-437f8efc7904" />
+A brief explanation of the parameters above:
+
+-m is the path to the files you want to generate rules for
+--excludegood force to exclude all goodware strings (these are strings found in legitimate software and can increase false positives)
+-o location & name you want to output the Yara rule
+If all is well, you should see the following output.
+
+Using yarGen to generate a rule for file2
+
+<img width="683" height="258" alt="Screenshot 2025-09-06 at 8 16 51 PM" src="https://github.com/user-attachments/assets/aa3013c0-b320-4911-bd71-041c1b612583" />
+
+
+Check if the YARA rule was created
+
+If file2.yar appears, the rule was successfully generated.
+<img width="790" height="240" alt="Screenshot 2025-09-06 at 8 22 53 PM" src="https://github.com/user-attachments/assets/dcd37120-8e35-4b9d-8129-0ecd58ffede5" />
+Generally, you would examine the Yara rule and remove any strings that you feel might generate false positives. For this exercise, we will leave the generated Yara rule as is and test to see if Yara will flag file 2 or no.
+
+Note: Another tool created to assist with this is called yarAnalyzer (you guessed it — created by Florian Roth). We will not examine that tool in this room, but you should read up on it, especially if you decide to start creating your own Yara rules.
+
+Further Reading on creating Yara rules and using yarGen:
+
+https://www.bsk-consulting.de/2015/02/16/write-simple-sound-yara-rules/
+https://www.bsk-consulting.de/2015/10/17/how-to-write-simple-but-sound-yara-rules-part-2/
+https://www.bsk-consulting.de/2016/04/15/how-to-write-simple-but-sound-yara-rules-part-3/
+Answer the questions below
+
+9.1 From within the root of the suspicious files directory, what command would you run to test Yara and your Yara rule against file 2? (Question Hint Use the same name I called the Yara file to answer this question)
+
+
+
 
 
 
