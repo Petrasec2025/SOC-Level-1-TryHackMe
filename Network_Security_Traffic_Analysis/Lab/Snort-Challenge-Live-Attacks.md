@@ -1,4 +1,6 @@
 <img width="732" height="228" alt="Screenshot 2025-09-12 at 5 35 40 PM" src="https://github.com/user-attachments/assets/0fd6bd60-d0b1-4b0b-88ce-3f8949a0cff3" />
+
+---
 This room is part of the SOC Level 1 Path.
 
 I am making these walkthroughs to keep myself motivated to learn cyber security, and ensure that I remember the knowledge gained by these challenges on HTB and THM. Join me on learning cyber security. I will try and explain concepts as I go, to differentiate myself from other walkthroughs.
@@ -6,11 +8,12 @@ I am making these walkthroughs to keep myself motivated to learn cyber security,
 Now, let’s move on!
 Task 1: Introduction
 The room invites you to a challenge where you will investigate a series of traffic data and stop malicious activity under two different scenarios. Let’s start working with Snort to analyse live and captured traffic.
+---
 <img width="1278" height="521" alt="Screenshot 2025-09-12 at 5 35 53 PM" src="https://github.com/user-attachments/assets/ac863803-0ebc-41e3-a3eb-03ea5e6cc2ff" />
 Questions
 Read the task above.
 Answer: No answer needed
-
+---
 Task 2: Scenario 1 | Brute-Force
 Use the attached VM to finish this task.
 <img width="299" height="295" alt="Screenshot 2025-09-12 at 5 41 39 PM" src="https://github.com/user-attachments/assets/7dce2d3f-dc6f-4fe7-982a-9fdf781f9803" />
