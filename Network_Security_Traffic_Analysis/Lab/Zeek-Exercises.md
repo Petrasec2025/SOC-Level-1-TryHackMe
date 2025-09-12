@@ -1,9 +1,10 @@
 Network Forensics Analysis with Zeek
+![TryHackMe User](https://img.shields.io/badge/TryHackMe-Petras20-blue)
+![Completion](https://img.shields.io/badge/Completion-100%25-brightgreen)
+![Zeek Log Analysis](https://img.shields.io/badge/Zeek-Log%20Analysis-orange)
+![TryHackMe Profile](https://img.shields.io/badge/TryHackMe-Profile-red)
 
-https://img.shields.io/badge/TryHackMe-Petras20-blue
-https://img.shields.io/badge/Completion-100%2525-brightgreen
-https://img.shields.io/badge/Zeek-Log%2520Analysis-orange
-https://img.shields.io/badge/TryHackMe-Profile-red
+
 ---
 <img width="1331" height="551" alt="Screenshot 2025-09-12 at 7 59 50 PM" src="https://github.com/user-attachments/assets/788c6df8-63fd-461a-a141-671e09b8f7ba" />
 
