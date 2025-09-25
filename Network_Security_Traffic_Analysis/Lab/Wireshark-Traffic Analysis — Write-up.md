@@ -177,4 +177,3 @@ This room teaches **packet-level traffic analysis**, **anomaly detection**, **cl
 
 The exercises cover TCP/UDP scanning, ARP poisoning, Man-in-the-Middle attacks, DHCP/NetBIOS/Kerberos host identification, tunneling traffic, FTP/HTTP/HTTPS analysis, and practical firewall rules implementation.
 
-
