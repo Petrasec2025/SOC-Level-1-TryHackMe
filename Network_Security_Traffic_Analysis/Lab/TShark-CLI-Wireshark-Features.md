@@ -148,5 +148,210 @@ Requests and responses: -z http_seq,tree -q
 HTTPpacket statistics
 <img width="677" height="300" alt="Screenshot 2025-09-25 at 6 22 10 PM" src="https://github.com/user-attachments/assets/4cb51ef4-403a-48c4-a9e6-19a14872166b" />
 
+Q1 : Use the “demo.pcapng” to answer the questions.
 
+Which IP address has 7 appearances?
+Enter your answer in defanged format.
+To find the answer just run this command shark -r demo.pcapng -z ip_hosts,tree -q and check for count Burst rate to be 7 as mentioned in the question as 7 appearances you will get the IP Address now you have to use CyberChef to defang the IP Address (I have given the link for CyberChef above) you will find the answer
+<img width="680" height="365" alt="Screenshot 2025-09-27 at 12 33 29 AM" src="https://github.com/user-attachments/assets/6fe8fbcd-723d-4bd2-8367-c57d5cc85d4b" />
+<img width="687" height="306" alt="Screenshot 2025-09-27 at 12 33 41 AM" src="https://github.com/user-attachments/assets/66de8a9c-1920-4158-a26e-d271c7bd9e6c" />
+Answer: 216[.]239[.]59[.]99
 
+Q2: What is the “destination address percentage” of the previous IP address?
+
+To find the answer just run this command tshark -r demo.pcapng -z ip_srcdst,tree -q you will find the answer
+
+Press enter or click to view image in full size
+<img width="683" height="595" alt="Screenshot 2025-09-27 at 12 33 52 AM" src="https://github.com/user-attachments/assets/efad06d6-debd-4ef3-9658-9b4711602fb4" />
+
+Answer: 6.98%
+
+Q3 : Which IP address constitutes “2.33% of the destination addresses”?
+
+Enter your answer in defanged format.
+To find the answer just run this command tshark -r demo.pcapng -z dests,tree -q from the result shown find the percentage that as 2.33% in the IP Address of it and now you have to use CyberChef to defang the IP Address (I have given the link for CyberChef above) you will find the answer
+
+<img width="681" height="600" alt="Screenshot 2025-09-27 at 12 35 34 AM" src="https://github.com/user-attachments/assets/7c3ef681-a6f9-4867-ba15-9be9154cdd40" />
+<img width="676" height="566" alt="Screenshot 2025-09-27 at 12 35 47 AM" src="https://github.com/user-attachments/assets/82bed0b4-d279-428e-bdf4-f0c2926b8476" />
+<img width="704" height="312" alt="Screenshot 2025-09-27 at 12 35 57 AM" src="https://github.com/user-attachments/assets/b9abe6e1-fe5e-4b11-a8c2-8919d8e8b238" />
+
+Answer: 145[.]253[.]2[.]203
+
+Q4: What is the average “Qname Len” value?
+
+To find the answer just run this command tshark -r demo.pcapng -z dns,tree -q and in the result find Qname Len now you can get the Average burst rate that will be your answer
+<img width="679" height="594" alt="Screenshot 2025-09-27 at 12 36 13 AM" src="https://github.com/user-attachments/assets/d3f08efb-76e0-46c7-a7d3-185cb0ff1154" />
+Answer: 29.00
+Task — 4 Command-Line Wireshark Features III | Streams, Objects and Credentials
+
+Command-Line Wireshark Features III | Streams, Objects and Credentials
+
+There are plenty of filters designed for multiple purposes. The common filtering options for specific operations are explained below. Note that most of the commands shown below are CLI versions of the Wireshark features discussed in the Wireshark module
+
+Follow Stream
+
+This option helps analysts to follow traffic streams similar to Wireshark. The query structure is explained in the table given below.
+
+Press enter or click to view image in full size
+<img width="671" height="163" alt="Screenshot 2025-09-27 at 12 38 24 AM" src="https://github.com/user-attachments/assets/f7da678c-b8b8-4053-83cf-d4698165b671" />
+Note: Streams start from “0”. You can filter the packets and follow the streams by using the parameters given below.
+
+TCP Streams: -z follow,tcp,ascii,0 -q
+UDP Streams: -z follow,udp,ascii,0 -q
+HTTP Streams: -z follow,http,ascii,0 -q
+Follow TCP stream
+<img width="677" height="456" alt="Screenshot 2025-09-27 at 12 38 36 AM" src="https://github.com/user-attachments/assets/208e5cf6-4e3f-483e-8264-19682f8a97b1" />
+Export Objects
+
+This option helps analysts to extract files from DICOM, HTTP, IMF, SMB and TFTP. The query structure is explained in the table given below.
+<img width="674" height="195" alt="Screenshot 2025-09-27 at 12 38 44 AM" src="https://github.com/user-attachments/assets/eedba24f-46cb-42d4-8f98-7c55dde04fc9" />
+You can filter the packets and follow the streams by using the parameters given below.
+
+--export-objects http,/home/ubuntu/Desktop/extracted-by-tshark -q
+Export objects
+<img width="682" height="200" alt="Screenshot 2025-09-27 at 12 38 52 AM" src="https://github.com/user-attachments/assets/24755e1f-dfb2-40cb-a63f-28724c9f8de1" />
+
+Credentials
+
+This option helps analysts to detect and collect cleartext credentials from FTP, HTTP, IMAP, POP and SMTP. You can filter the packets and find the cleartext credentials using the parameters below.
+
+-z credentials -q
+ind cleartext credentials
+<img width="675" height="344" alt="Screenshot 2025-09-27 at 12 39 04 AM" src="https://github.com/user-attachments/assets/f6604de6-bb91-4ed4-ad12-ba8314da83a4" />
+Q1 : Use the “demo.pcapng” to answer the questions.
+
+Follow the “UDP stream 0”.
+What is the “Node 0” value?
+Enter your answer in defanged format.
+To find the answer just run this commad tshark -r demo.pcapng -z follow,udp,ascii,0 -q you will get the IP Address and now you have to use CyberChef to defang the IP Address (I have given the link for CyberChef above) you will find the answer
+<img width="675" height="251" alt="Screenshot 2025-09-27 at 12 39 15 AM" src="https://github.com/user-attachments/assets/18f03842-abd6-4050-8f64-7e089237e291" />
+<img width="687" height="317" alt="Screenshot 2025-09-27 at 12 39 24 AM" src="https://github.com/user-attachments/assets/f0ca16a4-0c9d-455e-a29a-c6a4be266156" />
+
+Answer: 145[.]254[.]160[.]237:3009
+
+Q2 : Follow the “HTTP stream 1”.
+
+What is the “Referer” value?
+Enter your answer in defanged format.
+To find the answer just run the command tshark -r demo.pcapng -z follow,http,ascii,1 -q search for the Referer Value put that Referer Value on CyberChef (I have given the link for CyberChef above) as this is an URL you need to change the Recipe to Defang URL now paste the result URL you will find the answer
+<img width="679" height="595" alt="Screenshot 2025-09-27 at 12 39 36 AM" src="https://github.com/user-attachments/assets/34002fe9-1c77-428d-8ff1-9e24e5cff6cf" />
+<img width="682" height="313" alt="Screenshot 2025-09-27 at 12 39 47 AM" src="https://github.com/user-attachments/assets/ca7f8bf0-995e-41c2-a814-dc3a16eaa83d" />
+Answer: hxxp[://]www[.]ethereal[.]com/download[.]html
+
+Q3 : Use the “credentials.pcap” to answer the question.
+
+What is the total number of detected credentials?
+To find the answer just run this command tshark -r credentials.pcap -z credentials -q | wc -l you will get count of credentials as they said in the hint to Exclude the banner lines! so now you have to run this command tshark -r credentials.pcap -z credentials -q | nl to find how many lines have the banner as per the result count for the banner is 4 so just substract it from the previous result i.e 79–4 = 75
+<img width="678" height="62" alt="Screenshot 2025-09-27 at 12 40 00 AM" src="https://github.com/user-attachments/assets/fee0f14f-4fc4-485b-9d05-f2a4fefc5248" />
+<img width="674" height="611" alt="Screenshot 2025-09-27 at 12 40 09 AM" src="https://github.com/user-attachments/assets/4c035965-b7e8-4f4c-b3ba-3c26c1931b87" />
+<img width="680" height="594" alt="Screenshot 2025-09-27 at 12 40 19 AM" src="https://github.com/user-attachments/assets/88065fa5-d02a-4352-8589-899fbd85feb2" />
+Answer: 75
+
+Task — 5 Advanced Filtering Options | Contains, Matches and Fields
+
+Advanced Filtering Options | Contains, Matches and Extract Fields
+
+Accomplishing in-depth packet analysis sometimes ends up with a special filtering requirement that cannot be covered with default filters. TShark supports Wireshark’s “contains” and “matches” operators, which are the key to the advanced filtering options. You can visit the Wireshark: Packet Operations room (Task 6) if you are unfamiliar with these filters.
+
+A quick recap from the Wireshark: Packet Operations room:
+
+Press enter or click to view image in full size
+<img width="676" height="264" alt="Screenshot 2025-09-27 at 12 46 04 AM" src="https://github.com/user-attachments/assets/96e534db-30f3-43c7-83c7-c47cf748ff21" />
+Note: The “contains” and “matches” operators cannot be used with fields consisting of “integer” values.
+Tip: Using HEX and regex values instead of ASCII always has a better chance of a match.
+
+Extract Fields
+
+This option helps analysts to extract specific parts of data from the packets. In this way, analysts have the opportunity to collect and correlate various fields from the packets. It also helps analysts manage the query output on the terminal. The query structure is explained in the table given below.
+<img width="676" height="86" alt="Screenshot 2025-09-27 at 12 46 11 AM" src="https://github.com/user-attachments/assets/9c6a3fe9-6100-4801-8b99-1d7d0c1a350b" />
+
+Note: You need to use the -e parameter for each field you want to display.
+
+You can filter any field by using the field names as shown below.
+
+-T fields -e ip.src -e ip.dst -E header=y
+Extract fields
+<img width="682" height="200" alt="Screenshot 2025-09-27 at 12 46 21 AM" src="https://github.com/user-attachments/assets/0961f241-3326-4193-a98f-83f39a6dae5d" />
+Filter: “contains”
+<img width="669" height="253" alt="Screenshot 2025-09-27 at 12 46 30 AM" src="https://github.com/user-attachments/assets/fa14f2de-4dd8-4592-9e9f-cc1c012762ef" />
+Contains filter
+<img width="674" height="154" alt="Screenshot 2025-09-27 at 12 46 44 AM" src="https://github.com/user-attachments/assets/11330779-32f3-4d2a-927d-5f5a4cfbef8b" />
+<img width="670" height="276" alt="Screenshot 2025-09-27 at 12 46 54 AM" src="https://github.com/user-attachments/assets/b5fdcd92-eb4a-4cac-bb19-95bfc0a7ca05" />
+
+Matches filter
+<img width="682" height="204" alt="Screenshot 2025-09-27 at 12 47 01 AM" src="https://github.com/user-attachments/assets/b47d28d2-1674-43bc-87f6-fa3299001022" />
+Q1 : Use the “demo.pcapng” to answer questions.
+
+What is the HTTP packet number that contains the keyword “CAFE”?
+To find the answer just run this command tshark -r demo.pcapng -Y ‘http contains “CAFE”’ you will find the answer
+<img width="677" height="62" alt="Screenshot 2025-09-27 at 12 47 08 AM" src="https://github.com/user-attachments/assets/21ab26a6-1e3a-4afb-8e7e-4dfc6b1b739f" />
+Answer: 27
+
+Q2 : Filter the packets with “GET” and “POST” requests and extract the packet frame time.
+
+What is the first time value found?
+To find the answer just run this command tshark -r demo.pcapng -Y ‘http.request.method == “GET” || http.request.method == “POST”’ -T fields -e frame.time you will find the answer
+<img width="678" height="57" alt="Screenshot 2025-09-27 at 12 47 16 AM" src="https://github.com/user-attachments/assets/b2f9890a-3b1b-4aa4-a3ad-bf3fe69c6a0d" />
+Answer: May 13, 2004 10:17:08.222534000 UTC
+
+Task — 6 Use Cases | Extract Information
+
+Use Cases
+
+When investigating a case, a security analyst should know how to extract hostnames, DNS queries, and user agents to hunt low-hanging fruits after viewing the statistics and creating an investigation plan. The most common four use cases for every security analyst are demonstrated below. If you want to learn more about the mentioned protocols and benefits of the extracted info, please refer to the Wireshark Traffic Analysis room.
+
+Extract Hostnames
+<img width="681" height="237" alt="Screenshot 2025-09-27 at 12 53 08 AM" src="https://github.com/user-attachments/assets/3c6bc437-1baf-4569-ae7a-6855ba67cd88" />
+The above example shows how to extract hostnames from DHCP packets with TShark. However, the output is hard to manage when multiple duplicate values exist. A skilled analyst should know how to use native Linux tools/utilities to manage and organise the command line output, as shown below.
+
+Extract hostnames
+<img width="679" height="158" alt="Screenshot 2025-09-27 at 12 53 16 AM" src="https://github.com/user-attachments/assets/ec13f4a3-0dc4-469e-84d9-c19b5e477724" />
+Now the output is organised and ready to process/use. The logic of the query is explained below.
+<img width="661" height="395" alt="Screenshot 2025-09-27 at 12 53 26 AM" src="https://github.com/user-attachments/assets/f160eb78-296b-403d-abcd-b8dcd5f605c9" />
+Extract DNS Queries
+
+Matches filter
+<img width="688" height="238" alt="Screenshot 2025-09-27 at 12 53 33 AM" src="https://github.com/user-attachments/assets/167d6800-5bf2-43cd-8806-514e7c1c3fbd" />
+Extract User Agents
+
+Matches filter
+
+<img width="677" height="197" alt="Screenshot 2025-09-27 at 12 53 40 AM" src="https://github.com/user-attachments/assets/49850e90-9eeb-4995-a7a0-bfa7915bc6fc" />
+Q1 : Use the “hostnames.pcapng” to answer the questions.
+
+What is the total number of unique hostnames?
+To find the answer just run this command tshark -r hostnames.pcapng -T fields -e dhcp.option.hostname | awk NF | sort -r | uniq -c | sort -r | wc -l you will find the answer
+<img width="677" height="63" alt="Screenshot 2025-09-27 at 12 53 49 AM" src="https://github.com/user-attachments/assets/c4c29422-0549-4405-844b-1bbbb4c13505" />
+Answer: 30
+
+Q2 : What is the total appearance count of the “prus-pc” hostname?
+
+To find the answer just run this command tshark -r hostnames.pcapng -T fields -e dhcp.option.hostname | grep -c “prus-pc” you will find the answer
+
+<img width="676" height="87" alt="Screenshot 2025-09-27 at 12 53 57 AM" src="https://github.com/user-attachments/assets/41090041-e902-44bd-8173-f7b7acc853f2" />
+Answer: 12
+
+Q3 : Use the “dns-queries.pcap” to answer the question.
+
+What is the total number of queries of the most common DNS query?
+To find the answer just run this command tshark -r dns-queries.pcap -T fields -e dns.qry.name | sort | uniq -c | sort -nr | head -n 1 you will find the answer
+
+<img width="677" height="67" alt="Screenshot 2025-09-27 at 12 54 06 AM" src="https://github.com/user-attachments/assets/45445743-dd11-4ac5-9d66-e12ea325f5b6" />
+
+Answer: 472
+
+Q4 : Use the “user-agents.pcap” to answer questions.
+
+What is the total number of the detected “Wfuzz user agents”?
+To find the answer just run this command tshark -r user-agents.pcap -Y ‘http.user_agent contains “Wfuzz”’ | wc -l you will find the answer
+
+<img width="681" height="69" alt="Screenshot 2025-09-27 at 12 54 15 AM" src="https://github.com/user-attachments/assets/eac5896e-2117-417d-ba6a-a65aa739e46e" />
+Answer: 12
+
+Q5 : What is the “HTTP hostname” of the nmap scans?
+
+Enter your answer in defanged format.
+To find the answer run this command tshark -r user-agents.pcap -T fields -e http.host now from the result you will get the HTTP hostname and you will find a common IP Address now use that IP Address on CyberChef website to defang the IP Address (I have given the link for CyberChef above) you will find the answer
+<img width="672" height="585" alt="Screenshot 2025-09-27 at 12 54 25 AM" src="https://github.com/user-attachments/assets/d6523199-d721-4894-a909-5b08c7967b99" />
+<img width="679" height="303" alt="Screenshot 2025-09-27 at 12 54 35 AM" src="https://github.com/user-attachments/assets/9105e7c8-59f3-46ba-b351-f1da40f283b2" />
+Answer: 172[.]16[.]172[.]129
