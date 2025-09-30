@@ -1,143 +1,190 @@
-<img width="1211" height="195" alt="Screenshot 2025-09-30 at 1 43 29 PM" src="https://github.com/user-attachments/assets/c3899cf4-cbc6-4a2c-9141-b2482fff755b" />
-The final room before we head over to the SIEM rooms. I’ve already done the Splunk rooms so I won’t have a write-up for those. I remember that I didn’t struggle too much in them though. I just did a lot of clicking around when I found something interesting.
+# Wazuh Room Walkthrough
 
-Task 1 Introduction
+![Room Banner](https://github.com/user-attachments/assets/c3899cf4-cbc6-4a2c-9141-b2482fff755b)
 
-1: When was Wazuh released?
+## 🏆 Badges
+![SIEM](https://img.shields.io/badge/SIEM-Wazuh-0078D6?style=for-the-badge&logo=shield&logoColor=white)
+![EDR](https://img.shields.io/badge/EDR-Endpoint_Detection-00C800?style=for-the-badge&logo=monitor&logoColor=white)
+![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-FFFF00?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-TryHackMe-FF0000?style=for-the-badge&logo=tryhackme&logoColor=white)
+![Completion](https://img.shields.io/badge/Completion-100%25-00FF00?style=for-the-badge)
+![Monitoring](https://img.shields.io/badge/Monitoring-Security_Events-800080?style=for-the-badge)
 
+## Overview
+The final room before we head over to the SIEM rooms. I've already done the Splunk rooms so I won't have a write-up for those. I remember that I didn't struggle too much in them though. I just did a lot of clicking around when I found something interesting.
+
+---
+
+## Task 1 Introduction
+
+### Question 1: When was Wazuh released?
 Found in the introduction.
 
-Answer: 2015
+**Answer:** `2015`
 
-2: What is the term that Wazuh calls a device that is being monitored for suspicious activity and potential security threats?
+### Question 2: What is the term that Wazuh calls a device that is being monitored for suspicious activity and potential security threats?
+This was in the reading. It's the relationship between this and manager.
 
-This was in the reading. It’s the relationship between this and manager.
+**Answer:** `Agent`
 
-Answer: Agent
+### Question 3: Lastly, what is the term for a device that is responsible for managing these devices?
+I wasn't able to really find it in the readings so I checked the hint.
 
-3: Lastly, what is the term for a device that is responsible for managing these devices?
+**Answer:** `Manager`
 
-I wasn’t able to really find it in the readings so I checked the hint.
+---
 
-Answer: Manager
+## Task 2 Required: Deploy Wazuh Server
 
-Task 2 Required: Deploy Wazuh Server
+While I can't RDP here, it said to connect to TryHackMe's network then type the IP address. If you don't know how to, my RDP guide will at least tell you how to get your open vpn profile and get on TryHackMe's network.
 
-While I can’t RDP here, it said to connect to TryHackMe’s network then type the IP address. If you don’t know how to, my RDP guide will at least tell you how to get your open vpn profile and get on TryHackMe’s network.
+Once you get in the network, open your virtual machine's browser and type in the IP address. It should be listed in the question for task 2. The IP is different every time you start it up. Then enter the credentials obtained from the reading.
 
-Once you get in the network, open your virtual machine’s browser and type in the IP address. It should be listed in the question for task 2. The IP is different every time you start it up. Then enter the credentials obtained from the reading.
-<img width="427" height="426" alt="Screenshot 2025-09-30 at 1 44 29 PM" src="https://github.com/user-attachments/assets/793fa715-8ebc-4973-9278-21dfd5b50309" />
-Task 3 Wazuh Agents
+![Wazuh Login](https://github.com/user-attachments/assets/793fa715-8ebc-4973-9278-21dfd5b50309)
 
-1: How many agents does this Wazuh management server manage?
+---
 
-We can find this by clicking on the Wazuh icon on the top left and then clicking on “Agents.”
-<img width="254" height="211" alt="Screenshot 2025-09-30 at 1 44 37 PM" src="https://github.com/user-attachments/assets/b68abe5a-64b1-419b-93da-58b4c3df2fe2" />
+## Task 3 Wazuh Agents
+
+### Question 1: How many agents does this Wazuh management server manage?
+We can find this by clicking on the Wazuh icon on the top left and then clicking on "Agents."
+
+![Agents Menu](https://github.com/user-attachments/assets/b68abe5a-64b1-419b-93da-58b4c3df2fe2)
+
 You should be able to see a list of agents attached to this manager.
-<img width="685" height="63" alt="Screenshot 2025-09-30 at 1 44 44 PM" src="https://github.com/user-attachments/assets/da8d13a9-261f-4ace-81b3-12bd2b515ded" />
-Answer: 2
 
-2: What are the status of the agents managed by this Wazuh management server?
+![Agents List](https://github.com/user-attachments/assets/da8d13a9-261f-4ace-81b3-12bd2b515ded)
 
+**Answer:** `2`
+
+### Question 2: What are the status of the agents managed by this Wazuh management server?
 On the screenshot above, look to the right to see the status.
 
-Answer: disconnected
+**Answer:** `disconnected`
 
-Task 4 Wazuh Vulnerability Assessment & Security Events
+---
 
-1: How many “Security Event” alerts have been generated by the agent “AGENT-001”?
+## Task 4 Wazuh Vulnerability Assessment & Security Events
 
-First, we will navigate to the agent page again. This time, we will click on the agent named “agent-001.” Then we will click on “Security events” at the top left.
+### Question 1: How many "Security Event" alerts have been generated by the agent "AGENT-001"?
+First, we will navigate to the agent page again. This time, we will click on the agent named "agent-001." Then we will click on "Security events" at the top left.
 
-<img width="251" height="102" alt="Screenshot 2025-09-30 at 1 44 52 PM" src="https://github.com/user-attachments/assets/59f4dfe4-fd3a-4ff1-b070-f78f9e1b404f" />
-Next, we will be presented with a search bar. On the right side of it, we will edit the time. I simply changed it to “Years ago” instead.
-<img width="687" height="88" alt="Screenshot 2025-09-30 at 1 44 59 PM" src="https://github.com/user-attachments/assets/225e5a53-ed94-4a26-a12b-c6c385243a25" />
+![Security Events](https://github.com/user-attachments/assets/59f4dfe4-fd3a-4ff1-b070-f78f9e1b404f)
+
+Next, we will be presented with a search bar. On the right side of it, we will edit the time. I simply changed it to "Years ago" instead.
+
+![Time Filter](https://github.com/user-attachments/assets/225e5a53-ed94-4a26-a12b-c6c385243a25)
+
 After changing it and updating it, it should display the security events alert.
-<img width="683" height="63" alt="Screenshot 2025-09-30 at 1 45 06 PM" src="https://github.com/user-attachments/assets/3ce05575-6bfa-4345-9f4c-815eaa4b3d71" />
 
-Answer: 196
+![Security Events Count](https://github.com/user-attachments/assets/3ce05575-6bfa-4345-9f4c-815eaa4b3d71)
 
-Task 7 Collecting Windows Logs with Wazuh
+**Answer:** `196`
 
-1: What is the name of the tool that we can use to monitor system events?
+---
 
+## Task 7 Collecting Windows Logs with Wazuh
+
+### Question 1: What is the name of the tool that we can use to monitor system events?
 From the reading, Sysmon is used.
 
-Answer: Sysmon
+**Answer:** `Sysmon`
 
-2: What standard application on Windows do these system events get recorded to?
-
+### Question 2: What standard application on Windows do these system events get recorded to?
 From the reading, and the Sysmon room we did, you can find these events in Event Viewer.
 
-Answer: Event Viewer.
+**Answer:** `Event Viewer`
 
-Task 8 Collecting Linux Logs with Wazuh
+---
 
-1: What is the full file path to the rules located on a Wazuh management server?
+## Task 8 Collecting Linux Logs with Wazuh
 
+### Question 1: What is the full file path to the rules located on a Wazuh management server?
 This one can be found within the reading.
 
-Answer: /var/ossec/ruleset/rules
+**Answer:** `/var/ossec/ruleset/rules`
 
-Task 9 Auditing Commands on Linux with Wazuh
+---
 
-1: What application do we use on Linux to monitor events such as command execution?
+## Task 9 Auditing Commands on Linux with Wazuh
 
+### Question 1: What application do we use on Linux to monitor events such as command execution?
 This can be found in the reading.
 
-Answer: Auditd
+**Answer:** `Auditd`
 
-2: What is the full path & filename for where the aforementioned application stores rules?
-
+### Question 2: What is the full path & filename for where the aforementioned application stores rules?
 This can be found in the reading.
 
-Answer: /etc/audit/rules.d/audit.rules
+**Answer:** `/etc/audit/rules.d/audit.rules`
 
-Task 10 Wazuh API
+---
 
-1: What is the name of the standard Linux tool that we can use to make requests to the Wazuh management server?
+## Task 10 Wazuh API
 
+### Question 1: What is the name of the standard Linux tool that we can use to make requests to the Wazuh management server?
 This is found in the reading, near the beginning.
 
-Answer: curl
+**Answer:** `curl`
 
-2: What HTTP method would we use to retrieve information for a Wazuh management server API?
-
+### Question 2: What HTTP method would we use to retrieve information for a Wazuh management server API?
 I already knew this, but I checked and it is also found in the reading.
 
-Answer: GET
+**Answer:** `GET`
 
-3: What HTTP method would we use to perform an action on a Wazuh management server API?
-
+### Question 3: What HTTP method would we use to perform an action on a Wazuh management server API?
 This one I did not know but it is found in the reading.
 
-Answer: PUT
+**Answer:** `PUT`
 
-4: Use the API console to find the Wazuh server’s version.
-
+### Question 4: Use the API console to find the Wazuh server's version.
 First, we need to get to the API Console. This can be done by going to the top left and clicking on the Wazuh icon, clicking on tools, and then clicking on API Console.
-<img width="445" height="270" alt="Screenshot 2025-09-30 at 1 45 16 PM" src="https://github.com/user-attachments/assets/9409744e-33bc-4c76-91ac-fe49a5d9debe" />
+
+![API Console](https://github.com/user-attachments/assets/9409744e-33bc-4c76-91ac-fe49a5d9debe)
+
 After that, we are presented with some queries already! To execute a line of code, we click on the line with the code you want to execute and a play button should appear.
-<img width="560" height="67" alt="Screenshot 2025-09-30 at 1 45 29 PM" src="https://github.com/user-attachments/assets/400143bd-2ed3-4893-a036-e56a6c29a81b" />
+
+![API Play Button](https://github.com/user-attachments/assets/400143bd-2ed3-4893-a036-e56a6c29a81b)
+
 Clicking play will execute the command. Then we just look at the output. I clicked through all of them to find the server information.
 
-Answer: v4.2.5
+**Answer:** `v4.2.5`
 
-Task 11 Generating Reports with Wazuh
+---
 
-1: Analyse the report. What is the name of the agent that has generated the most alerts?
+## Task 11 Generating Reports with Wazuh
 
-First we need to generate a report. We will go back to the Security Events section. Click on the Wazuh logo on the top left, then click Modules, then click Security Event. On this page, we generate the report by clicking on “Generate report” on the top right.
-<img width="331" height="113" alt="Screenshot 2025-09-30 at 1 45 36 PM" src="https://github.com/user-attachments/assets/fb2bd4c1-6586-487c-9fa4-9deafc21a5b8" />
+### Question 1: Analyse the report. What is the name of the agent that has generated the most alerts?
+First we need to generate a report. We will go back to the Security Events section. Click on the Wazuh logo on the top left, then click Modules, then click Security Event. On this page, we generate the report by clicking on "Generate report" on the top right.
+
+![Generate Report](https://github.com/user-attachments/assets/fb2bd4c1-6586-487c-9fa4-9deafc21a5b8)
+
 Now that we generated the report, we will download the file to view it. We do this by going to the Wazuh logo again, then to Management, then finally Reporting.
-<img width="623" height="402" alt="Screenshot 2025-09-30 at 1 45 46 PM" src="https://github.com/user-attachments/assets/c4c91516-e35a-48dd-876b-f6fe95fca377" />
+
+![Reporting Section](https://github.com/user-attachments/assets/c4c91516-e35a-48dd-876b-f6fe95fca377)
+
 When we find the report we want, we go to the Actions column and click either download or delete.
-<img width="690" height="60" alt="Screenshot 2025-09-30 at 1 45 56 PM" src="https://github.com/user-attachments/assets/0b1189a5-ff28-4841-9671-3e24d4c6d5eb" />
+
+![Report Actions](https://github.com/user-attachments/assets/0b1189a5-ff28-4841-9671-3e24d4c6d5eb)
 
 Since we know we only have one agent, we already know the answer of the name of the agent that generated the most alert. We found the names back in Task 4.
 
-Answer: agent-001
+**Answer:** `agent-001`
 
-Thoughts:
+---
 
-Wow. That was another fun room. I suppose I think fun rooms are easy rooms. I did enjoy it because Wazuh seemed like an extensive EDR and also a SIEM together. I did enjoy how easy to use it was. I never heard of Wazuh but I’m glad I was exposed to it!
+## 🎯 Final Badges
+![API](https://img.shields.io/badge/API-Console_Access-FF69B4?style=for-the-badge)
+![Reporting](https://img.shields.io/badge/Reporting-Automated-000080?style=for-the-badge)
+![Room](https://img.shields.io/badge/Room-Wazuh-FF4500?style=for-the-badge)
+![Monitoring](https://img.shields.io/badge/Monitoring-Cross_Platform-008080?style=for-the-badge)
+
+## Thoughts & Conclusion
+
+Wow. That was another fun room. I suppose I think fun rooms are easy rooms. I did enjoy it because Wazuh seemed like an extensive EDR and also a SIEM together. I did enjoy how easy to use it was. I never heard of Wazuh but I'm glad I was exposed to it!
+
+The room provided excellent hands-on experience with Wazuh, teaching valuable skills in endpoint monitoring, security event analysis, API usage, and report generation. The practical exercises helped reinforce how to manage agents, analyze security events, and utilize Wazuh's comprehensive features for security monitoring and incident response.
+
+---
+
+**Room Link:** [https://tryhackme.com/room/wazuh](https://tryhackme.com/room/wazuh)
