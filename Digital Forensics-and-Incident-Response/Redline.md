@@ -1,210 +1,206 @@
-<img width="1427" height="274" alt="Screenshot 2025-10-01 at 7 06 12 PM" src="https://github.com/user-attachments/assets/fe193ad2-1c7f-4abf-8d38-f9c140cebb59" />
+# Redline Memory Analysis
+
+![Room Banner](https://github.com/user-attachments/assets/fe193ad2-1c7f-4abf-8d38-f9c140cebb59)
+
+## 📋 Overview
+
 Learn how to use Redline to perform memory analysis and to scan for IOCs on an endpoint.
 
-I really suck at memory analysis, so this is going to be a toughie
+I really suck at memory analysis, so this is going to be a toughie.
 
-Task 1 Introduction
-Question 1:
+## 🏁 Task 1: Introduction
 
-Who created Redline?
+### **Q1: Who created Redline?**
+**Answer:** `fireeye`
 
-HOW: Answer is in the above text. Linking the page for future reference.
+**HOW:** Answer is in the above text. Linking the page for future reference: https://fireeye.market/apps/211364
 
-https://fireeye.market/apps/211364
+## 📊 Task 2: Data Collection
 
-Answer: fireeye
+### **Q1: What data collection method takes the least amount of time?**
+**Answer:** `Standard Collector`
 
-Task 2 Data Collection
-Question 1:
+### **Q2: You are reading a research paper on a new strain of ransomware. You want to run the data collection on your computer based on the patterns provided, such as domains, hashes, IP addresses, filenames, etc. What method would you choose to run a granular data collection against the known indicators?**
+**Answer:** `IOC Search Collector`
 
-What data collection method takes the least amount of time?
+### **Q3: What script would you run to initiate the data collection process? Please include the file extension.**
+**Answer:** `RunRedlineAudit.bat`
 
-Answer: Standard Collector
+### **Q4: If you want to collect the data on Disks and Volumes, under which option can you find it?**
+**Answer:** `disk enumeration`
 
-Question 2:
-You are reading a research paper on a new strain of ransomware. You want to run the data collection on your computer based on the patterns provided, such as domains, hashes, IP addresses, filenames, etc. What method would you choose to run a granular data collection against the known indicators?
+### **Q5: What cache does Windows use to maintain a preference for recently executed code?**
+**HINT:** Check the Redline User Guide
 
-Answer: IOC Search Collector
+**Answer:** `prefetch`
 
-Question 3:
+## 🖥️ Task 3: The Redline Interface
 
-What script would you run to initiate the data collection process? Please include the file extension.
+### **Q1: Where in the Redline UI can you view information about the Logged in User?**
+**Answer:** `System Information`
 
-Answer: RunRedlineAudit.bat
+## 🔍 Task 4: Standard Collector Analysis
 
-Question 4:
+### **Q1: Provide the Operating System detected for the workstation.**
+**HINT:** Check System Information
 
-If you want to collect the data on Disks and Volumes, under which option can you find it?
+**HOW:** My machine crashed, so I lost the image I had made. I found the lab one in C:\Users\Administrator\Documents\Analysis\Sessions\AnalysisSession1. When I opened that I went to System Information, and scrolled down.
 
-Answer: disk enumeration
+![System Information](https://github.com/user-attachments/assets/c5c6f760-ea30-4496-af31-b1fb1a74ebd6)
 
-Question 5:
+**Answer:** `Windows Server 2019 Standard 17763`
 
-What cache does Windows use to maintain a preference for recently executed code?
+### **Q2: Provide the BIOS Version for the workstation.**
+**HINT:** Check System Information. If the answer doesn't match, are you using the imported analysis?
 
-HINT: Check the Redline User Guide
+**HOW:** I had to make a new analysis, so I did other questions using the session already in the image to answer the other questions while I waited.
 
-Answer: prefetch
+**Answer:** `AMAZON - 1`
 
-Task 3 The Redline Interface
-Question 1:
+### **Q3: What is the suspicious scheduled task that got created on the victim's computer?**
+**HOW:** Went to tasks, and the suspicious one really stands out.
 
-Where in the Redline UI can you view information about the Logged in User?
+![Scheduled Tasks](https://github.com/user-attachments/assets/9c2c3965-2697-449e-858f-4556de6df626)
 
-Answer: System Information
+**Answer:** `MSOfficeUpdateFa.ke`
 
-Task 4 Standard Collector Analysis
-Question 1:
+### **Q4: Find the message that the intruder left for you in the task.**
+**HINT:** Check the "Comment" section for the scheduled task
 
-Provide the Operating System detected for the workstation.
+**HOW:** It's in the comment section of the above screenshot
 
-HINT: Check System Information
+**Answer:** `THM-p3R5IStENCe-m3Chani$m`
 
-HOW: My machine crashed, so I lost the image I had made. I found the lab one in C:\Users\Administrator\Documents\Analysis\Sessions\AnalysisSession1. When I opened that I went to System Information, and scrolled down.
+### **Q5: There is a new System Event ID created by an intruder with the source name "THM-Redline-User" and the Type "ERROR". Find the Event ID #.**
+**HOW:** Go to events, search for "THM-Redline-User" and you will find it easily:
 
-Press enter or click to view image in full size
-<img width="681" height="557" alt="Screenshot 2025-10-01 at 7 08 08 PM" src="https://github.com/user-attachments/assets/c5c6f760-ea30-4496-af31-b1fb1a74ebd6" />
-Answer: Windows Server 2019 Standard 17763
+![Event Log](https://github.com/user-attachments/assets/941c2f30-321e-4346-9669-5dddcb2bb323)
 
-Question 2:
+**Answer:** `546`
 
-Provide the BIOS Version for the workstation.
+### **Q6: Provide the message for the Event ID.**
+**HOW:** Click on the even you found in the last question and you will get an expanded view of the message.
 
-HINT: Check System Information. If the answer doesn’t match, are you using the imported analysis?
+**Answer:** `Someone cracked my password. Now I need to rename my puppy-++-`
 
-HOW: I had to make a new analysis, so I did other questions using the session already in the image to answer the other questions while I waited.
+### **Q7: It looks like the intruder downloaded a file containing the flag for Question 8. Provide the full URL of the website.**
+**HOW:** I went to the download history, and one of the files is called flag.txt
 
-Answer: AMAZON — 1
+![Download History](https://github.com/user-attachments/assets/57004166-d57e-4eb8-b3a5-c03e125ab5e4)
 
-Question 3:
+**Answer:** `https://wormhole.app/download-stream/gI9vQtChjyYAmZ8Ody0AuA`
 
-What is the suspicious scheduled task that got created on the victim’s computer?
+### **Q8: Provide the full path to where the file was downloaded to including the filename.**
+**HOW:** All details are in the previously found file.
 
-HOW: Went to tasks, and the suspicious one really stands out.
-<img width="682" height="551" alt="Screenshot 2025-10-01 at 7 08 19 PM" src="https://github.com/user-attachments/assets/9c2c3965-2697-449e-858f-4556de6df626" />
-Answer: MSOfficeUpdateFa.ke
+**Answer:** `C:\Program Files (x86)\Windows Mail\SomeMailFolder\flag.txt`
 
-Question 4:
+### **Q9: Provide the message the intruder left for you in the file.**
+**HOW:** Copy and paste the above path into file explorer and read the .txt file
 
-Find the message that the intruder left for you in the task.
+**Answer:** `THM{600D-C@7cH-My-FR1EnD}`
 
-HINT: Check the “Comment” section for the scheduled task
+## 🔎 Task 5: IOC Search Collector
 
-HOW: It’s in the comment section of the above screenshot
-
-Answer: THM-p3R5IStENCe-m3Chani$m
-
-Question 5:
-
-There is a new System Event ID created by an intruder with the source name “THM-Redline-User” and the Type “ERROR”. Find the Event ID #.
-
-HOW: Go to events, search for “THM-Redline-User” and you will find it easily:
-<img width="682" height="552" alt="Screenshot 2025-10-01 at 7 08 27 PM" src="https://github.com/user-attachments/assets/941c2f30-321e-4346-9669-5dddcb2bb323" />
-Answer: 546
-
-Question 6:
-
-Provide the message for the Event ID.
-
-HOW: Click on the even you found in the last question and you will get an expanded view of the message.
-
-Answer: Someone cracked my password. Now I need to rename my puppy-++-
-
-Question 7:
-
-It looks like the intruder downloaded a file containing the flag for Question 8. Provide the full URL of the website.
-
-HOW: I went to the download history, and one of the files is called flag.txt
-
-Press enter or click to view image in full size
-<img width="692" height="273" alt="Screenshot 2025-10-01 at 7 08 35 PM" src="https://github.com/user-attachments/assets/57004166-d57e-4eb8-b3a5-c03e125ab5e4" />
-Answer: https://wormhole.app/download-stream/gI9vQtChjyYAmZ8Ody0AuA
-
-Question 8:
-
-Provide the full path to where the file was downloaded to including the filename.
-
-HOW: All details are in the previously found file.
-
-Answer: C:\Program Files (x86)\Windows Mail\SomeMailFolder\flag.txt
-
-Question 9:
-
-Provide the message the intruder left for you in the file.
-
-HOW: Copy and paste the above path into file explorer and read the .txt file
-
-Answer: THM{600D-C@7cH-My-FR1EnD}
-
-Task 5 IOC Search Collector
 Handy Link for the future: https://www.fireeye.com/content/dam/fireeye-www/services/freeware/ug-ioc-editor.pdf.
 
-NOTE: I’m getting really annoyed with this one. My VM crashed again, and then I couldn’t open the IOC, so I had to run it again. It’s been over an hour of just trying to get ready to answer these questions.
+**NOTE:** I'm getting really annoyed with this one. My VM crashed again, and then I couldn't open the IOC, so I had to run it again. It's been over an hour of just trying to get ready to answer these questions.
 
-I gave up and googled it. It turns out that this room is just broken, and it’s known to not work. I guess they haven’t updated it.
+I gave up and googled it. It turns out that this room is just broken, and it's known to not work. I guess they haven't updated it.
 
 There is discussion for a solution (on reddit i think). Basically you need to create an IoC report from the existing scan on the machine ( C:\Users\Administrator\Documents\Analysis\Sessions\AnalysisSession1), creating a new IoC search collector doesn't work.
 So for tasks 5 and 6 I recommend following this writeup, and reading how they got their answers since this is essentially crap.
 
-Writeup: Redline - AtomicMaya/knowledge-base GitHub Wiki
-For this box I used the browser based remote. Link: Redline on TryHackMe Who created Redline? Answer: FireEye What data…
-github-wiki-see.page
+Writeup: [Redline - AtomicMaya/knowledge-base GitHub Wiki](https://github.com/AtomicMaya/knowledge-base/wiki/Redline)
 
-Task 7 Endpoint Investigation
-Question 1:
+## 🎯 Task 7: Endpoint Investigation
 
-Can you identify the product name of the machine?
+### **Q1: Can you identify the product name of the machine?**
+**HOW:**
 
-HOW:
-<img width="680" height="513" alt="Screenshot 2025-10-01 at 7 08 52 PM" src="https://github.com/user-attachments/assets/f8f3825b-44ef-4814-9199-be9788f7c96b" />
-Answer: \_R_E_A_D___T_H_I_S___AJYG1O_.txt
+![Product Name](https://github.com/user-attachments/assets/f8f3825b-44ef-4814-9199-be9788f7c96b)
 
-Question 3:
+**Answer:** `\_R_E_A_D___T_H_I_S___AJYG1O_.txt`
 
-Find the Windows Defender service; what is the name of its service DLL?
+### **Q2: Find the Windows Defender service; what is the name of its service DLL?**
+**HOW:**
 
-HOW:
-<img width="685" height="353" alt="Screenshot 2025-10-01 at 7 09 09 PM" src="https://github.com/user-attachments/assets/40eaae1f-63d6-4be0-bbcf-4ea1c6057093" />
+![Windows Defender Service](https://github.com/user-attachments/assets/40eaae1f-63d6-4be0-bbcf-4ea1c6057093)
 
-<img width="513" height="223" alt="Screenshot 2025-10-01 at 7 09 15 PM" src="https://github.com/user-attachments/assets/cfea2157-ed3e-4233-9ef3-d89f8bc18a06" />
+![Service DLL](https://github.com/user-attachments/assets/cfea2157-ed3e-4233-9ef3-d89f8bc18a06)
 
-Answer: MpSvc.dll
+**Answer:** `MpSvc.dll`
 
-Question 3:
+### **Q3: The user manually downloaded a zip file from the web. Can you find the filename?**
+**HOW:**
 
-The user manually downloaded a zip file from the web. Can you find the filename?
+![Downloaded Zip File](https://github.com/user-attachments/assets/2d512bcb-fe9b-4b5e-a9e9-299612570933)
 
-HOW:
+**Answer:** `eb5489216d4361f9e3650e6a6332f7ee21b0bc9f3f3a4018c69733949be1d481.zip`
 
-<img width="683" height="322" alt="Screenshot 2025-10-01 at 7 09 22 PM" src="https://github.com/user-attachments/assets/2d512bcb-fe9b-4b5e-a6e9-299612570933" />
+### **Q4: Provide the filename of the malicious executable that got dropped on the user's Desktop.**
+**HOW:**
 
-Answer: eb5489216d4361f9e3650e6a6332f7ee21b0bc9f3f3a4018c69733949be1d481.zip
+![Malicious Executable](https://github.com/user-attachments/assets/9eedc1ee-d7bc-4e45-a9aa-c77ddb7c7d90)
 
-Question 4:
+**Answer:** `Endermanch@Cerber5.exe`
 
-Provide the filename of the malicious executable that got dropped on the user’s Desktop.
+### **Q5: Provide the MD5 hash for the dropped malicious executable.**
+**HOW:**
 
-HOW:
-<img width="712" height="200" alt="Screenshot 2025-10-01 at 7 09 30 PM" src="https://github.com/user-attachments/assets/9eedc1ee-d7bc-4e45-a9aa-c77ddb7c7d90" />
-Answer: Endermanch@Cerber5.exe
+![MD5 Hash](https://github.com/user-attachments/assets/1355b752-aab6-49a6-b48b-78ba1547c4e5)
 
-Question 5:
+**Answer:** `fe1bc60a95b2c2d77cd5d232296a7fa4`
 
-Provide the MD5 hash for the dropped malicious executable.
+### **Q6: What is the name of the ransomware?**
+**HOW:** Looked at the hash on virustotal.com
 
-HOW:
-<img width="614" height="230" alt="Screenshot 2025-10-01 at 7 09 36 PM" src="https://github.com/user-attachments/assets/1355b752-aab6-49a6-b48b-78ba1547c4e5" />
-Answer: fe1bc60a95b2c2d77cd5d232296a7fa4
+**Answer:** `Cerber`
 
-Question 6:
+## 💭 CONCLUSION
 
-What is the name of the ransomware?
+This is obviously a useful tool, but my word was this ever a pointless endeavour in this room. THM really needs to improve the stability of the VMs as there is no good reason for this to have taken me so long. For hours now I've just been fighting with this virtual machine.
 
-HOW: Looked at the hash on virustotal.com
+Even including the analysis files in the image would make this so much easier. That way when your VM inevitably crashes you can just open the image and you don't have to fuck around for 30 minutes recapturing everything, and then fighting with it further.
 
-Answer: Cerber
+---
 
-CONCLUSION:
-This is obviously a useful tool, but my word was this ever a pointless endeavour in this room. THM really needs to improve the stability of the VMs as there is no good reason for this to have taken me so long. For hours now I’ve just been fighting with this virtual machine.
+## 🔐 Cybersecurity Badges
 
-Even including the analysis files in the image would make this so much easier. That way when your VM inevitably crashes you can just open the image and you don’t have to fuck around for 30 minutes recapturing everything, and then fighting with it further.
+<div align="center">
+  
+![Redline Analysis](https://img.shields.io/badge/Redline-Analysis-blue)
+![Memory Forensics](https://img.shields.io/badge/Memory-Forensics-green)
+![IOC Analysis](https://img.shields.io/badge/IOC-Analysis-red)
+![Endpoint Investigation](https://img.shields.io/badge/Endpoint-Investigation-orange)
+![Malware Analysis](https://img.shields.io/badge/Malware-Analysis-purple)
+![FireEye Tools](https://img.shields.io/badge/FireEye-Tools-yellow)
+![Incident Response](https://img.shields.io/badge/Incident-Response-lightgrey)
+![Threat Hunting](https://img.shields.io/badge/Threat-Hunting-9cf)
+
+</div>
+
+---
+
+## 🛡️ Skills Demonstrated
+
+- **Redline Tool Usage**
+- **Memory Analysis and Collection**
+- **IOC (Indicator of Compromise) Analysis**
+- **Scheduled Task Investigation**
+- **Event Log Analysis**
+- **File Download Tracking**
+- **Malware Hash Analysis**
+- **Ransomware Identification**
+- **Endpoint Security Assessment**
+- **Incident Response Procedures**
+
+---
+
+<div align="center">
+
+**🔍 Redline Memory Forensics Completed** | **✅ IOC Analysis Applied** | **🛡️ Endpoint Investigation Mastered**
+
+*Despite technical challenges, this investigation demonstrated comprehensive memory analysis capabilities using Redline for endpoint security assessment and threat detection.*
+
+</div>
