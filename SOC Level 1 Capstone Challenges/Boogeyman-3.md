@@ -6,7 +6,7 @@
 
 Have you feared the return of the Boogeyman?
 
-If not, you've stumbled on the right blog! Welcome to my weekly walkthrough. This is a comprehensive walkthrough of the Boogeyman 3 challenge from TryHackMe, the third in a series of capstone challenges for their SOC Level 1 learning path. This challenge is a digital forensics and incident response (DFIR) engagement for the final showdown with a fictional threat actor called the Boogeyman.
+If not, you've stumbled on the right Github! Welcome to my weekly walkthrough. This is a comprehensive walkthrough of the Boogeyman 3 challenge from TryHackMe, the third in a series of capstone challenges for their SOC Level 1 learning path. This challenge is a digital forensics and incident response (DFIR) engagement for the final showdown with a fictional threat actor called the Boogeyman.
 
 If you want to catch up on how we got here, check out my walkthroughs of Boogeyman 1 & Boogeyman 2 first.
 
